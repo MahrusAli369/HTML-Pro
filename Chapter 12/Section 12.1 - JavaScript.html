@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 12.1 – JavaScript Loading Methods</title>
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: Raleway, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c8e6c9;
+    }
+
+    .container {
+      width: 60%;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1b5e20;
+    }
+
+    h2 {
+      color: #2e7d32;
+    }
+
+    pre {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>JavaScript Loading Techniques</h1>
+    <ol>
+      <li>
+        <h2>Synchronous</h2>
+        <pre>&lt;script src="path/to.js"&gt;&lt;/script&gt;</pre>
+        <p>
+          Standard practice is to place JavaScript <code>&lt;script&gt;</code> tags
+          just before the closing <code>&lt;/body&gt;</code> tag.
+          This allows your site’s visuals to load first and prevents scripts from
+          interacting with elements that haven’t yet loaded.
+        </p>
+      </li>
+
+      <li>
+        <h2>Asynchronous</h2>
+        <pre>&lt;script src="path/to.js" async&gt;&lt;/script&gt;</pre>
+        <p>
+          When the script isn’t required for page initialization, you can load it
+          asynchronously.
+          The browser downloads the script in parallel and executes it as soon as it’s ready,
+          even if HTML parsing isn’t finished.
+        </p>
+      </li>
+
+      <li>
+        <h2>Deferred</h2>
+        <pre>&lt;script src="path/to.js" defer&gt;&lt;/script&gt;</pre>
+        <p>
+          Deferred scripts wait until the HTML document is fully parsed before executing.
+          They maintain the order in which they appear, unlike <code>async</code>.
+        </p>
+      </li>
+
+      <li>
+        <h2>noscript</h2>
+        <pre>&lt;noscript&gt;Your browser does not support JavaScript.&lt;/noscript&gt;</pre>
+        <p>
+          The <b>&lt;noscript&gt;</b> element displays alternate content if JavaScript is disabled
+          or not supported by the browser.
+          It can be placed inside either the <b>head</b> or the <b>body</b>.
+        </p>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Example scripts (not real paths, just for demonstration) -->
+  <script src="Synchronous.js"></script>
+  <script src="Asynchronous.js" async></script>
+  <script src="Deferred.js" defer></script>
+
+  <noscript>
+    JavaScript is disabled in your browser. Some features may not work.
+  </noscript>
+</body>
+
+</html>

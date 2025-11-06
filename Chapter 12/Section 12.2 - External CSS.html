@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 12.2 – External CSS</title>
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: Raleway, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: lightskyblue;
+    }
+
+    .container {
+      width: 60%;
+      margin: 30px auto;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #01579b;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    pre {
+      background-color: #f3f3f3;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+    }
+
+    span {
+      color: #0277bd;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>External CSS</h1>
+    <p>
+      The standard practice is to place CSS <b>&lt;link&gt;</b> tags inside the
+      <b>&lt;head&gt;</b> tag at the top of your HTML document.
+      This ensures your styles are loaded first, so the page displays properly
+      as it loads instead of flashing unstyled content.
+      The <b>type</b> attribute is not required in HTML5 because it defaults to <code>text/css</code>.
+    </p>
+
+    <pre>
+&lt;link rel="stylesheet" href="path/to.css" type="text/css"&gt;
+<span>and</span>
+&lt;link rel="stylesheet" href="path/to.css"&gt;
+    </pre>
+
+    <p>
+      Both examples above work the same way in HTML5.
+      A less common method is to use an <code>@import</code> statement inside a
+      <b>&lt;style&gt;</b> tag:
+    </p>
+
+    <pre>
+&lt;style type="text/css"&gt;
+  @import url("path/to.css");
+&lt;/style&gt;
+
+&lt;style&gt;
+  @import url("path/to.css");
+&lt;/style&gt;
+    </pre>
+  </div>
+</body>
+
+</html>

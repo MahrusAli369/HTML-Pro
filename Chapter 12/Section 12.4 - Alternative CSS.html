@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 12.4 – Alternative CSS</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../Chapter 12 - Linking Resources/html.ico" type="image/x-icon">
+
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: lightskyblue;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0b3954;
+    }
+
+    .container {
+      width: 50%;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    pre {
+      background-color: #f3f3f3;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      overflow-x: auto;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .left-border {
+      border-left: 4px solid #000;
+      padding-left: 12px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Alternative CSS</h1>
+
+    <pre>
+&lt;link rel="alternate stylesheet" href="path/to/style.css" title="yourTitle"&gt;
+      </pre>
+
+    <p>
+      Some browsers allow alternate style sheets to be offered. By default, they will not be applied automatically,
+      but users can activate them through browser settings.
+    </p>
+
+    <p class="left-border">
+      Firefox lets users select the stylesheet via <b>View &gt; Page Style</b>.
+      Internet Explorer also supports this (from IE 8 onward) through the same menu.
+      Chrome, however, requires an extension to enable this feature (as of version 48).
+      A webpage can also provide its own interface to let users switch styles dynamically.
+    </p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 12.3 – Favicon</title>
+  <link rel="shortcut icon" href="../Chapter 12 - Linking Resources/html.ico" type="image/x-icon">
+  <!-- Recommended favicon links -->
+  <link rel="icon" href="html.ico" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="html.ico" sizes="16x16 32x32" type="image/x-icon">
+
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: lightskyblue;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0b3954;
+    }
+
+    .container {
+      width: 50%;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    pre {
+      background-color: #f3f3f3;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: left;
+      font-family: Consolas, monospace;
+      overflow-x: auto;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Favicon</h1>
+    <pre>
+&lt;link rel="icon" href="/favicon.png" sizes="32x32" type="image/png"&gt;
+&lt;link rel="shortcut icon" href="/favicon.ico" sizes="16x16 32x32" type="image/x-icon"&gt;
+      </pre>
+
+    <p>
+      Use the MIME type <code>image/png</code> for PNG files and
+      <code>image/x-icon</code> for icon (*.ico) files.
+      A file named <code>favicon.ico</code> placed at the root of your website
+      will usually be detected automatically, even without a
+      <b>&lt;link&gt;</b> tag.
+      However, if this file changes, browsers can sometimes be slow to update
+      their cached version.
+    </p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #2 - Class & IDs Styling Practice</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        ._now {
+            color: red;
+            font-size: large;
+        }
+        .ABC{
+            color: green;
+            text-decoration: underline;
+        }
+
+        .abc{
+            background-color: orange;
+        }
+
+        .a29{
+            background-color: black;
+            color: yellow;
+        }
+
+        /* .23, .!sd, .@new {
+             Invalid class names - CSS will not apply styles
+            color: blue;
+            font-weight: bold;
+        } */
+    </style>
+</head>
+<body>
+    <h1>Valid and Invalid Class Names</h1>
+    <div class="container">
+        <div class="_now">This is valid class</div>
+        <div class="ABC">This is also valid class</div>
+        <div class="abc">This is also acceptable class</div>
+        <div class="a29">This is an example of valid class</div>
+        <div class="23">Class starting with numbers is not valid.</div>
+        <div class="!sd">Class name with special characters is not allowed.</div>
+        <div class="@new">Class name with special characters is not allowed.</div>
+    </div>
+</body>
+</html>

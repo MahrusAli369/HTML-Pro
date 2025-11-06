@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 15.4 - Responsive Image using Picture element</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid black;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Responsive Image using Picture element</h1>
+
+    <!-- First picture -->
+    <picture>
+        <source media="(min-width: 600px)" srcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200">
+        <source media="(min-width: 450px)" srcset="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600">
+        <img src="Lake_House.png" alt="Lake house by the water">
+    </picture>
+
+    <!-- Second picture -->
+    <picture>
+        <source media="(min-width: 600px)" srcset="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200">
+        <source media="(min-width: 450px)" srcset="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400"
+            alt="Mountain landscape with lake">
+    </picture>
+
+    <!-- Third picture -->
+    <picture>
+        <source media="(min-width: 600px)" srcset="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200">
+        <source media="(min-width: 450px)" srcset="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400"
+            alt="Forest with sunlight filtering through trees">
+    </picture>
+
+</body>
+
+</html>

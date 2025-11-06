@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.3 - Responsive Image using srcset</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Responsive Image using srcset</h1>
+
+    <img sizes="(min-width: 1200px) 580px,
+                (min-width: 640px) 48vw,
+                98vw" srcset="
+            https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300 300w,
+            https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600 600w,
+            https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900 900w,
+            https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200 1200w"
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900"
+        alt="Beautiful ocean waves during sunrise">
+</body>
+
+</html>

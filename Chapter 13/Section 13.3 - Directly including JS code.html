@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 13.3 - Directly Including JS Code</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightcoral;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        pre {
+            background-color:lightgrey;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Directly Including JS Code</h1>
+        <p>
+            Instead of linking to an external file, you can write JavaScript directly in your HTML file
+            using the <b>&lt;script&gt;</b> tag.
+        </p>
+
+        <pre>&lt;script&gt;
+  console.log("Hello Users");
+  console.log("Nice to meet you!");
+  console.log("Instead of linking to an external file, you can also include the JS code as-is in your HTML");
+&lt;/script&gt;
+    </pre>
+    </div>
+
+    <script>
+        console.log("Hello Users");
+        console.log("Nice to meet you!");
+        console.log("Instead of linking to an external file, you can also include the JS code as-is in your HTML");</script>
+</body>
+
+</html>

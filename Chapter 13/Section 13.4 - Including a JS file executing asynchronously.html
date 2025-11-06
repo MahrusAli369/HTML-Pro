@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 13.4 - Async JS File</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightcoral;
+        }
+
+        .container {
+            width: 60%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        pre {
+            background-color: #f3f3f3;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Async JS File</h1>
+        <p>
+            The <b>async</b> attribute allows a script to download in parallel with other resources, without blocking
+            the page rendering.
+            Once the script is downloaded, it will execute immediately.
+        </p>
+
+        <pre>&lt;script type="text/javascript" src="Section 13.4.js" async&gt;&lt;/script&gt;</pre>
+
+        <p>Check the browser console to see the asynchronous script behavior.</p>
+    </div>
+
+    <script type="text/javascript" src="Section 13.4.js" async></script>
+</body>
+
+</html>

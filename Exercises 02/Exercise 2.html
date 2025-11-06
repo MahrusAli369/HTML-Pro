@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - Images & Media</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff0f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #990066;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        img,
+        video {
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover,
+        video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        picture img {
+            display: block;
+        }
+
+        video {
+            max-width: 450px;
+        }
+
+        @media (max-width: 600px) {
+            .media-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Images & Video</h1>
+    <div class="media-container">
+        <picture>
+            <source media="(min-width:1200px)" srcset="/Chapter 15 - Images/Lake_House_large.png">
+            <source media="(min-width:640px)" srcset="/Chapter 15 - Images/Lake_House_medium.png">
+            <img src="/Chapter 15 - Images/Lake_House.png" alt="Local Image">
+        </picture>
+
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image"
+            srcset="https://via.placeholder.com/150 150w, https://via.placeholder.com/300 300w, https://via.placeholder.com/450 450w">
+
+        <video controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+</body>
+
+</html>

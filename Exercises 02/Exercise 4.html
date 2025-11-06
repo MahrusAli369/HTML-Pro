@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 - Advanced Forms</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0fff0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            gap: 15px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+
+        input[type="file"] {
+            padding: 5px 0;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #006400;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="upload.php" method="post" target="_blank" enctype="multipart/form-data" novalidate>
+        <h1>File Submission Form</h1>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+
+        <label for="fileUpload">Upload File</label>
+        <input type="file" id="fileUpload" name="fileUpload" accept="image/*,.pdf">
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" step="1" required>
+
+        <label for="week">Select Week</label>
+        <input type="week" id="week" name="week" required>
+
+        <input type="submit" value="Submit Form">
+    </form>
+</body>
+
+</html>

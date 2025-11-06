@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17.3 - Input Validation</title>
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #e0f7fa;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #004d40;
+    }
+
+    form {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px 40px;
+      display: inline-block;
+      text-align: left;
+      border: 2px solid #004d40;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    input[type="number"],
+    input[type="range"],
+    input[name="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    input[type="submit"] {
+      background-color: #004d40;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00695c;
+    }
+
+    fieldset {
+      border: 2px solid #004d40;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin: 10px 0;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    p.demo {
+      font-style: italic;
+      margin-top: 15px;
+      color: #00695c;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Input Validation</h1>
+
+  <form>
+    <input type="text" name="name" minlength="3" maxlength="20" placeholder="Full Name" required>
+    <input type="email" name="email" minlength="10" maxlength="25" placeholder="Email" required>
+    <input pattern="\d*" name="number" minlength="10" placeholder="Mobile Number" required>
+
+    <fieldset>
+      <legend>Upload Bookcover</legend>
+      <input type="file" accept="image/*" title="Only images are allowed">
+    </fieldset>
+
+    <fieldset>
+      <legend>Upload File (rar, pdf, png, zip)</legend>
+      <input type="file" accept="image/*,.pdf,.rar,application/zip">
+    </fieldset>
+
+    <input type="submit" value="Publish"> <!-- form will be validated -->
+    <input type="submit" value="Save" formnovalidate> <!-- form will NOT be validated -->
+  </form>
+
+  <p class="demo">
+    💡 Live Demo: Try submitting the form without filling required fields — notice how browser validation prevents
+    submission.
+    The "Save" button skips validation using <b>formnovalidate</b>.
+  </p>
+</body>
+
+</html>

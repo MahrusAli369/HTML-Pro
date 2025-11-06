@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.6 - ICE - File</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background-color: #eef5f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #004d99;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 15px auto;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px dashed #004d99;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #f9fbfd;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #e6f2ff;
+            border-color: #0073e6;
+        }
+
+        input[type="submit"] {
+            background-color: #004d99;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0073e6;
+            transform: scale(1.03);
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Input Control Element - File</h1>
+    <form action="upload_file.php" method="post" enctype="multipart/form-data">
+        <label for="fileSubmission">Select file to upload:</label>
+        <input type="file" name="fileSubmission" id="fileSubmission">
+        <input type="submit" value="Upload your file" name="submit">
+    </form>
+</body>
+
+</html>

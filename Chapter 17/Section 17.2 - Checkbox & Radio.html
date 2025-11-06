@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17.2 - Checkbox & Radio</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: "Raleway", sans-serif;
+      color: #222;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 25px;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      display: inline-block;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    fieldset {
+      display: inline-block;
+      text-align: left;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      background-color: #fff;
+      border: 2px solid #1e3a8a;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    label {
+      margin-right: 15px;
+      font-size: 16px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      transform: scale(1.3);
+      margin-right: 6px;
+    }
+
+    input[type="radio"]:checked+label,
+    input[type="checkbox"]:checked+label {
+      color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Input Control Element - Checkbox & Radio</h1>
+  <h2>Simple Syntax</h2>
+  <pre>&lt;input type="checkbox"&gt;
+&lt;input type="radio"&gt;</pre>
+  <h2>Example 1</h2>
+  <fieldset>
+    <legend>Theme color:</legend>
+    <p>
+      <input type="radio" name="color" id="red" value="#F00" />
+      <label for="red">Red</label>
+    </p>
+    <p>
+      <input type="radio" name="color" id="green" value="#0F0" />
+      <label for="green">Green</label>
+    </p>
+    <p>
+      <input type="radio" name="color" id="blue" value="#00F" />
+      <label for="blue">Blue</label>
+    </p>
+  </fieldset>
+
+  <h2>Example 2</h2>
+  <fieldset>
+    <legend>Enter your favourite color:</legend>
+    <p>
+      <label for="redcb">
+        <input type="checkbox" name="color" id="redcb" value="#F00" /> Red
+      </label>
+    </p>
+    <p>
+      <label for="greencb">
+        <input type="checkbox" name="color" id="greencb" value="#0F0" /> Green
+      </label>
+    </p>
+    <p>
+      <label for="bluecb">
+        <input type="checkbox" name="color" id="bluecb" value="#00F" /> Blue
+      </label>
+    </p>
+  </fieldset>
+</body>
+
+</html>

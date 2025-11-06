@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.20 - ICE - Month</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        input[type="month"] {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="month"]:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 10px rgba(41, 128, 185, 0.3);
+            background-color: #ecf6fd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select Month</h1>
+        <form action="#">
+            <input type="month" required>
+        </form>
+    </div>
+</body>
+
+</html>

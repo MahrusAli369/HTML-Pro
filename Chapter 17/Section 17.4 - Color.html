@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <title>17.4 - ICE - Color</title>
+
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: "Raleway", sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #004d40;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            background: #ffffff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            border: 2px solid #004d40;
+        }
+
+        fieldset {
+            border: 2px solid #004d40;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            color: #004d40;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+
+        input[type="color"] {
+            width: 60px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .preview-box {
+            margin-top: 10px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #004d40;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Input Control Element - Color</h1>
+    <form action="#">
+        <fieldset>
+            <legend>Choose Your Favorite Colors</legend>
+
+            <label for="favcolor">Primary Color:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#ffffff">
+
+            <label for="bgcolor">Background Color:</label>
+            <input type="color" id="bgcolor" name="bgcolor" value="#00bcd4">
+
+            <label for="textcolor">Text Color:</label>
+            <input type="color" id="textcolor" name="textcolor" value="#212121">
+
+            <div class="preview-box" id="preview"></div>
+        </fieldset>
+    </form>
+
+    <script>
+        // Simple live preview
+        const bgInput = document.getElementById('bgcolor');
+        const txtInput = document.getElementById('textcolor');
+        const box = document.getElementById('preview');
+
+        function updatePreview() {
+            box.style.backgroundColor = bgInput.value;
+            box.style.color = txtInput.value;
+            box.textContent = "Preview";
+        }
+
+        bgInput.addEventListener('input', updatePreview);
+        txtInput.addEventListener('input', updatePreview);
+        updatePreview();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.13 - ICE - Number</title>
+    <style>
+        body {
+            font-family: "Raleway", sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: #f0f8ff;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+        }
+
+        input[type="number"]:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+        [type='submit'] {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border-radius: 8px;
+            border: 0px;
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        [type='submit']:hover {
+            color: green;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Order Quantity</h1>
+    <form>
+        <p>
+            <label for="quantity">Please Enter Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="30" step="1" required
+                title="Enter a number between 1 and 30">
+        </p>
+
+        <p>
+            <input type="submit" value="Order Now">
+        </p>
+    </form>
+</body>
+
+</html>

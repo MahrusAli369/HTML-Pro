@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17.16 - ICE - Image</title>
+  <style>
+    body {
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      background-color: #e6f7ff;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="image"] {
+      border: 2px solid #999;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="image"]:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #0066cc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Image Input</h1>
+  <form action="#" method="post">
+    <input type="image" src="img/img.png" alt="image_name" name="submitImage" width="300" formaction="#"
+      formmethod="post" />
+  </form>
+</body>
+</html>

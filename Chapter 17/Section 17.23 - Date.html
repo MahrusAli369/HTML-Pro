@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.23 - ICE - Date</title>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #fff3e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #e67e22;
+            margin-bottom: 25px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            outline: none;
+            margin: auto -16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="date"]:focus {
+            border-color: #e67e22;
+            background-color: #fff9f0;
+            box-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Date</h1>
+        <input type="date" name="meeting-date" min="2025-01-01" max="2030-12-31" required>
+    </div>
+</body>
+
+</html>

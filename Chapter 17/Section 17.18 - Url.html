@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.18 - ICE - URL</title>
+    <style>
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            background: #fff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #1f3c88;
+        }
+
+        /* Input styling */
+        input[type="url"] {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="url"]:focus {
+            border-color: #1f3c88;
+            box-shadow: 0 0 10px rgba(31, 60, 136, 0.3);
+            background-color: #f0f4ff;
+        }
+
+        ::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Submit button */
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #1f3c88;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #12275a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Enter Your Website URL</h1>
+        <form action="#" method="get">
+            <input type="url" name="homepage" placeholder="https://example.com" required>
+            <input type="submit" value="Submit URL">
+        </form>
+    </div>
+</body>
+
+</html>

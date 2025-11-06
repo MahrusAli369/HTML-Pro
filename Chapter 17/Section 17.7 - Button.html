@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.7 - ICE - Buttons</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        input[type='button'],
+        button[type='button'] {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: orange;
+            border-radius: 8px;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        input[type='button']:hover,
+        button[type='button']:hover {
+            background-color: white;
+            color: orange;
+            border: 2px solid orange;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        input[type='button']:active,
+        button[type='button']:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Input Control Element - Buttons</h1>
+    <input type="button" onclick="alert('Hello World!')" value="Click Me">
+    <button type="button" onclick="alert('Hello World!')">Click Me</button>
+</body>
+
+</html>

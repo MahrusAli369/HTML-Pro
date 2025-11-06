@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.10 - ICE - Hidden</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: "Raleway", sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Just for demonstration purposes to show hidden input value */
+        .hidden-value {
+            margin-top: 20px;
+            font-size: 16px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hidden Input</h1>
+    <p>There is something hidden below the paragraph.</p>
+
+    <input type="hidden" name="inputName" value="inputValue">
+
+    <!-- Optional live demo to show hidden input value using JS -->
+    <div class="hidden-value" id="hiddenDisplay"></div>
+
+    <script>
+        const hiddenInput = document.querySelector('input[type="hidden"]');
+        document.getElementById('hiddenDisplay').textContent =
+            `Hidden input value: ${hiddenInput.value}`;
+    </script>
+</body>
+
+</html>

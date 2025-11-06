@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 10.3</title>
+    <style>
+        body {
+            font-family: Raleway, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: lightblue;
+        }
+
+        ._now {
+            color: red;
+            font-size: x-large;
+        }
+
+        .ABC {
+            color: green;
+            text-decoration: underline;
+        }
+
+        .abc {
+            background-color: orange;
+        }
+
+        .a29 {
+            background-color: black;
+            color: yellow;
+        }
+
+        /* Invalid class examples commented out for correctness
+    .23 {}
+    .!sd {}
+    .@new {}
+    */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>Numbers (Not Valid)</div>
+        <div>Numbers + Alphabets (Not Valid)</div>
+        <div class="_now">Underscore (Valid)</div>
+        <div class="ABC">Uppercase (Valid)</div>
+        <div class="abc">Lowercase (Valid)</div>
+        <div class="a29">Alpha Numeric (Valid)</div>
+        <div>Sign ! (Not Valid)</div>
+        <div>Sign @ (Not Valid)</div>
+    </div>
+</body>
+
+</html>

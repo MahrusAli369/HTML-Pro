@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 10.4</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      background-color: lightblue;
+      margin: 0 auto;
+      padding: 15px 30px;
+    }
+
+    #aDiv {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Problems Related to Duplicated IDs</h1>
+    <p>
+      Having more than one element with the same ID is a hard-to-troubleshoot
+      problem. The HTML parser will usually try to render the page anyway.
+      Usually no error occurs, but the page could end up misbehaving.
+    </p>
+
+    <pre>
+In this example:
+&lt;div id="aDiv"&gt;a div&lt;/div&gt;
+&lt;div id="aDiv"&gt;b div&lt;/div&gt;
+      </pre>
+
+    <p>CSS selectors still work:</p>
+    <pre>
+#aDiv {
+    color: red;
+}
+      </pre>
+
+    <p>Output:</p>
+    <div id="aDiv">a</div>
+    <div id="aDiv">b</div>
+
+    <p>But JavaScript fails to handle both elements:</p>
+    <pre>
+var html = document.getElementById("aDiv").innerHTML;
+
+In this case, the "html" variable bears only the first div content ("a").
+      </pre>
+  </div>
+</body>
+
+</html>

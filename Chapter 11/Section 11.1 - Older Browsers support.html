@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 11.1 – Data Attributes & Browser Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      background-color: #e3f2fd;
+      width: 60%;
+      margin: 40px auto;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0d47a1;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    pre {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Older Browser Support for Data Attributes</h1>
+
+    <p>
+      Data attributes were introduced in <strong>HTML5</strong> and are supported by all modern browsers.
+      However, browsers developed before HTML5 do not recognize these attributes.
+    </p>
+
+    <p>
+      According to the HTML specification, any unrecognized attribute must be ignored by the browser during rendering.
+      Developers leveraged this behavior to create <em>non-standard attributes</em>, which are attributes not defined in
+      the HTML specification.
+    </p>
+
+    <p>
+      For example, the <code>value</code> attribute below is non-standard because it isn’t defined for the
+      <code>&lt;img&gt;</code> tag:
+    </p>
+
+    <pre>&lt;img src="sample.jpg" value="test"&gt;</pre>
+
+    <p>
+      This means that although older browsers don’t officially support data attributes, they still preserve them.
+      You can set and retrieve these values using the standard
+      <code>setAttribute()</code> and <code>getAttribute()</code> JavaScript methods.
+      However, the newer <code>dataset</code> property works only in modern browsers.
+    </p>
+  </div>
+</body>
+
+</html>

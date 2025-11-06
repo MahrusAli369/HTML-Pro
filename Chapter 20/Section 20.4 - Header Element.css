@@ -1,0 +1,28 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fefefe;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.blog-article {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #0077cc;
+}
+
+.article-header .date {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+}

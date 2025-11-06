@@ -1,0 +1,52 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.blog-article {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-header h2 {
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.article-header .intro {
+    font-size: 1em;
+    color: #555;
+}
+
+.chapter {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid #0077cc;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+}
+
+.chapter h3 {
+    margin-top: 0;
+    color: #005fa3;
+}
+
+.comments {
+    margin-top: 30px;
+}
+
+.comments h3 {
+    color: #cc0000;
+}
+
+.comments ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}

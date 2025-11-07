@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 31.2 - Drawing Two Rectangles on a Canvas</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .canvas-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      margin-top: 40px;
+    }
+
+    canvas {
+      border: 2px solid #aaa;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    canvas:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Canvas – Drawing Rectangles and More</h1>
+  <p>
+    This section demonstrates multiple canvas drawing examples using colors,
+    shapes, and layering.
+  </p>
+
+  <div class="canvas-container">
+    <canvas id="rectCanvas" width="300" height="200">
+      Your browser does not support canvas.
+    </canvas>
+
+    <canvas id="circleCanvas" width="300" height="200">
+      Your browser does not support canvas.
+    </canvas>
+
+    <canvas id="triangleCanvas" width="300" height="200">
+      Your browser does not support canvas.
+    </canvas>
+
+    <canvas id="gradientCanvas" width="300" height="200">
+      Your browser does not support canvas.
+    </canvas>
+  </div>
+
+  <footer>Chapter 31.2 – Drawing Two Rectangles on a Canvas</footer>
+
+  <!-- External JS file -->
+  <script src="Section 31.2 - Drawing two rectangles on a canvas.js"></script>
+</body>
+
+</html>

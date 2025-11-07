@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 31.1 - Basic Example</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+            margin: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .canvas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            margin-top: 40px;
+        }
+
+        canvas {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Canvas – Basic Drawing Examples</h1>
+    <p>
+        Below are multiple examples of HTML5 Canvas rendering with various shapes
+        and colors.
+    </p>
+
+    <div class="canvas-container">
+        <canvas id="myCanvas" width="300" height="150">
+            Cannot display graphic. Canvas is not supported by your browser.
+        </canvas>
+
+        <canvas id="circleCanvas" width="300" height="150">
+            Cannot display graphic. Canvas is not supported by your browser.
+        </canvas>
+
+        <canvas id="gradientCanvas" width="300" height="150">
+            Cannot display graphic. Canvas is not supported by your browser.
+        </canvas>
+
+        <canvas id="patternCanvas" width="300" height="150">
+            Cannot display graphic. Canvas is not supported by your browser.
+        </canvas>
+    </div>
+
+    <footer>Chapter 31.1 – Basic Example</footer>
+
+    <!-- External JS file -->
+    <script src="Section 31.1 - Basic Example.js"></script>
+</body>
+
+</html>

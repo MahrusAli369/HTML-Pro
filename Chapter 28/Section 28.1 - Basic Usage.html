@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 28.1 - Embed Tag Usage</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f2f6f9;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #004aad;
+            margin-bottom: 20px;
+        }
+
+        .embed-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        embed {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        p {
+            font-size: 1em;
+            color: #555;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Embed Element Examples</h1>
+    <div class="embed-container">
+        <p>
+            The <code>&lt;embed&gt;</code> element allows you to include external
+            resources like media files, documents, and interactive content.
+        </p>
+
+        <!-- Example 1: Old Flash Content (for legacy reference) -->
+        <embed src="myflash.swf" type="application/x-shockwave-flash" width="400" height="300" />
+
+        <!-- Example 2: Embedding a PDF document -->
+        <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf"
+            width="600" height="400" />
+
+        <!-- Example 3: Embedding an image from Unsplash -->
+        <embed src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" type="image/jpeg" width="600"
+            height="400" />
+
+        <!-- Example 4: Embedding an HTML page -->
+        <embed src="https://www.w3schools.com" type="text/html" width="600" height="400" />
+    </div>
+
+    <footer>
+        <p>
+            Examples include Flash (deprecated), PDFs, images, and live HTML pages.
+        </p>
+    </footer>
+</body>
+
+</html>

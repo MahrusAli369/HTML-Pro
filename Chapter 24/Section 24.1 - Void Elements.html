@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 24.1 - Void Elements</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #ffd700;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #252525;
+        }
+
+        tr:hover {
+            background-color: #383838;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        ol {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HTML 4.01 / XHTML 1.0 Strict Void Elements</h2>
+    <table>
+        <tr>
+            <th>Tag</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><b>&lt;area&gt;</b></td>
+            <td>Clickable area within an image map</td>
+        </tr>
+        <tr>
+            <td><b>&lt;base&gt;</b></td>
+            <td>Specifies the base URL for relative links</td>
+        </tr>
+        <tr>
+            <td><b>&lt;br&gt;</b></td>
+            <td>Inserts a line break</td>
+        </tr>
+        <tr>
+            <td><b>&lt;col&gt;</b></td>
+            <td>Defines column properties in a table [deprecated]</td>
+        </tr>
+        <tr>
+            <td><b>&lt;hr&gt;</b></td>
+            <td>Creates a horizontal line</td>
+        </tr>
+        <tr>
+            <td><b>&lt;img&gt;</b></td>
+            <td>Embeds an image</td>
+        </tr>
+        <tr>
+            <td><b>&lt;input&gt;</b></td>
+            <td>Defines an input field</td>
+        </tr>
+        <tr>
+            <td><b>&lt;link&gt;</b></td>
+            <td>Links external resources like stylesheets</td>
+        </tr>
+        <tr>
+            <td><b>&lt;meta&gt;</b></td>
+            <td>Provides metadata about the document</td>
+        </tr>
+        <tr>
+            <td><b>&lt;param&gt;</b></td>
+            <td>Defines parameters for plugins</td>
+        </tr>
+    </table>
+
+    <h2>HTML5 Additions to Void Elements</h2>
+    <table>
+        <tr>
+            <th>Tag</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><b>&lt;command&gt;</b></td>
+            <td>Represents a user command [obsolete]</td>
+        </tr>
+        <tr>
+            <td><b>&lt;keygen&gt;</b></td>
+            <td>Generates encryption keys [deprecated]</td>
+        </tr>
+        <tr>
+            <td><b>&lt;source&gt;</b></td>
+            <td>Defines media sources for audio/video elements</td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        <a href="https://stackoverflow.com/" target="_blank">
+            <h3>Visit <i>Stack Overflow</i> for More Info</h3>
+        </a>
+        <button onclick="alert('Hello from Section 24.1!')">Say Hello!</button>
+
+        <p>My favorite language is <b>HTML</b>. Here are my others:</p>
+        <ol>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+        </ol>
+    </div>
+</body>
+
+</html>

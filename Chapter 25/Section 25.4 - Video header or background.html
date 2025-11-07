@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 25.4 - Video Header or Background</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: "Segoe UI", Arial, sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Background video styling */
+    #videobg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      background: url("video.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Overlay for better text visibility */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    p {
+      font-size: 1.3em;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    button {
+      background: #00ffff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop poster="video.jpg" id="videobg">
+    <source src="video/AlQuran.mp4" type="video/mp4" />
+    <source src="video.webm" type="video/webm" />
+    <source src="video.ogg" type="video/ogg" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="overlay">
+    <h1>Experience the Motion</h1>
+    <p>Immerse yourself in the dynamic world of video backgrounds — blending design and storytelling in motion.</p>
+    <button>Learn More</button>
+  </div>
+
+  <footer>Section 25.4 — Video Header or Background Example</footer>
+</body>
+
+</html>

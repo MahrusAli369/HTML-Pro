@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 25.3 - Using Video & Audio Elements</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #e6e6e6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffff;
+      font-size: 2em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    video,
+    audio {
+      display: block;
+      width: 100%;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      background-color: #000;
+    }
+
+    video:hover,
+    audio:hover {
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    a:hover {
+      color: #ffcc00;
+    }
+
+    footer {
+      text-align: center;
+      color: #cccccc;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎥 Using Video & Audio Elements</h1>
+
+  <section>
+    <h2>Autoplay Video Example</h2>
+    <video src="videofile.webm" autoplay poster="posterimage.jpg">
+      Sorry, your browser doesn't support embedded videos.
+      You can <a href="videofile.webm">download it</a> instead.
+    </video>
+  </section>
+
+  <section>
+    <h2>Video with Subtitles</h2>
+    <video src="foo.webm" controls>
+      <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English" />
+      <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska" />
+    </video>
+  </section>
+
+  <section>
+    <h2>Multi-Source Video Example</h2>
+    <video width="480" controls poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif">
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm" />
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4" />
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg" />
+      Your browser doesn't support HTML5 video.
+    </video>
+  </section>
+
+  <section>
+    <h2>Autoplay Audio Example</h2>
+    <audio src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg" autoplay controls>
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Audio with Captions</h2>
+    <audio src="foo.ogg" controls>
+      <track kind="captions" src="foo.en.vtt" srclang="en" label="English" />
+      <track kind="captions" src="foo.sv.vtt" srclang="sv" label="Svenska" />
+    </audio>
+  </section>
+</body>
+
+</html>

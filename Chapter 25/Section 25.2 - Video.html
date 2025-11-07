@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 25.2 - Video Element</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #001f3f, #0074d9);
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2em;
+      text-shadow: 0 0 10px #000;
+    }
+
+    video {
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      border: 3px solid #00ffff;
+    }
+
+    video:hover {
+      transform: scale(1.03);
+      transition: transform 0.3s ease;}
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #cce7ff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎬 HTML5 Video Example</h1>
+
+  <video controls>
+    <source src="video/AlQuran.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+</body>
+
+</html>

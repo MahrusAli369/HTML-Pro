@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 32.2 – Embedding External SVG Files in HTML</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background-color: #f5f8fb;
+            color: #333;
+            text-align: center;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #007acc;
+            margin-bottom: 10px;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 10px auto;
+            line-height: 1.5;
+        }
+
+        .svg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            justify-items: center;
+        }
+
+        figure {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        figure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        figcaption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        img,
+        object {
+            width: 70px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Section 32.2 – Embedding External SVG Files in HTML</h1>
+
+    <p><strong>Using the <code>&lt;img&gt;</code> element:</strong></p>
+    <img src="./svg/Attention.svg" alt="Attention Icon" width="50" height="50">
+    <p>
+        The <code>img</code> element displays the SVG but does not allow CSS styling or JavaScript manipulation.
+    </p>
+
+    <p><strong>Using the <code>&lt;object&gt;</code> element:</strong></p>
+    <object type="image/svg+xml" data="./svg/Attention.svg" width="50" height="50"></object>
+    <p>
+        The <code>object</code> tag embeds the SVG inline into the DOM, allowing you to manipulate it using CSS and
+        JavaScript.
+    </p>
+
+    <div class="svg-grid">
+        <!-- Example 1: Attention Icon -->
+        <figure>
+            <object type="image/svg+xml" data="./svg/Attention.svg"></object>
+            <figcaption>Attention Icon (Local SVG)</figcaption>
+        </figure>
+
+        <!-- Example 2: Globe Icon -->
+        <figure>
+            <object type="image/svg+xml" data="./svg/Globe.svg"></object>
+            <figcaption>Globe Icon (SVG Repo)</figcaption>
+        </figure>
+
+        <!-- Example 3: Camera Icon -->
+        <figure>
+            <object type="image/svg+xml" data="./svg/Camera.svg"></object>
+            <figcaption>Camera Icon (SVG Repo)</figcaption>
+        </figure>
+
+        <!-- Example 4: Cloud Icon -->
+        <figure>
+            <object type="image/svg+xml" data="./svg/Cloud.svg"></object>
+            <figcaption>Cloud Icon (SVG Repo)</figcaption>
+        </figure>
+    </div>
+</body>
+
+</html>

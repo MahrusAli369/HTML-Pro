@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 32.3 – Embedding SVG using CSS</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+      margin: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 10px auto 30px;
+      line-height: 1.5;
+    }
+
+    .svg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .svg-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .svg-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .caption {
+      font-size: 0.9em;
+      color: #444;
+      margin-top: 8px;
+    }
+
+    /* Fixed inline SVG as CSS background */
+    .attention {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3Cpath%20fill='%23ff4d4d'%20d='m571,767l0,-106q0,-8,-5,-13t-12,-5l-108,0q-7,0,-12,5t-5,13l0,106q0,8,5,13t12,6l108,0q7,0,12,-6t5,-13Zm-1,-208l10,-257q0,-6,-5,-10q-7,-6,-14,-6l-122,0q-7,0,-14,6q-5,4,-5,12l9,255q0,5,6,9t13,3l103,0q8,0,13,-3t6,-9Zm-7,-522l428,786q20,35,-1,70q-10,17,-26,26t-35,10l-858,0q-18,0,-35,-10t-26,-26q-21,-35,-1,-70l429,-786q9,-17,26,-27t36,-10t36,10t27,27Z'/%3E%3C/svg%3E");
+    }
+
+    /* External SVG backgrounds */
+    .globe {
+      background-image: url('./svg/globe.svg');
+    }
+
+    .camera {
+      background-image: url('./svg/Camera.svg');
+    }
+
+    .cloud {
+      background-image: url('./svg/Coffee.svg');
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Section 32.3 – Embedding SVG using CSS</h1>
+  <p>
+    SVGs can be applied as background images using CSS. You can embed inline data URIs or link to external SVG sources.
+  </p>
+
+  <div class="svg-grid">
+    <div class="flex">
+      <div class="svg-icon attention"></div>
+      <div class="caption">Inline SVG (Attention Icon)</div>
+    </div>
+    
+    <div class="flex">
+      <div class="svg-icon globe"></div>
+      <div class="caption">External Globe SVG</div>
+    </div>
+
+    <div class="flex">
+      <div class="svg-icon camera"></div>
+      <div class="caption">External Camera SVG</div>
+    </div>
+
+    <div class="flex">
+      <div class="svg-icon cloud"></div>
+      <div class="caption">External Coffee SVG</div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 32.1 – Inline SVG</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      text-align: center;
+      margin: 40px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #007acc;
+    }
+
+    .svg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 30px;
+    }
+
+    svg {
+      width: 80px;
+      height: 80px;
+      transition: transform 0.3s, fill 0.3s;
+      fill: #007acc;
+    }
+
+    svg:hover {
+      transform: scale(1.2);
+      fill: #ff7f50;
+    }
+
+    .label {
+      margin-top: 8px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Inline SVG Examples</h1>
+  <div class="svg-grid">
+    <!-- Example 1: Attention icon (your original) -->
+    <div>
+      <svg class="attention" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+        <path id="attention" d="m571,767l0,-106q0,-8,-5,-13t-12,-5l-108,0q-7,0,-12,5t-5,13l0,106q0,8,5,13t12,6l108,0q7,0,12,-6t5
+            ,-13Zm-1,-208l10,-257q0,-6,-5,-10q-7,-6,-14,-6l-122,0q-7,0,-14,6q-5,4,-5,12l9,255q0,5,6,9t13,3l103,
+            0q8,0,13,-3t6,-9Zm-7,-522l428,786q20,35,-1,70q-10,17,-26,26t-35,10l-858,0q-18,0,-35,-10t-26,-26q-21
+            ,-35,-1,-70l429,-786q9,-17,26,-27t36,-10t36,10t27,27Z" />
+      </svg>
+      <div class="label">Attention Icon</div>
+    </div>
+
+    <!-- Example 2: Free icon from Flaticon/SVGRepo -->
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <!-- simple generic icon shape -->
+        <circle cx="32" cy="32" r="30" stroke="#007acc" stroke-width="4" fill="none" />
+        <path d="M20,32 L28,40 L44,24" stroke="#007acc" stroke-width="4" fill="none" />
+      </svg>
+      <div class="label">Check Circle (SVG Repo)</div>
+    </div>
+
+    <!-- Example 3: Heart icon from free SVG collection -->
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <path d="M32 58s26-15 26-34a14 14 0 0 0-28 0 14 14 0 0 0-28 0c0 19 26 34 26 34z" />
+      </svg>
+      <div class="label">Heart Icon</div>
+    </div>
+
+    <!-- Example 4: Star icon from free vector collection -->
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <polygon points="32 6 39.4 24.8 60 24.8 43.4 38.8 49.8 58 32 46.2 14.2 58 20.6 38.8 4 24.8 24.6 24.8 32 6" />
+      </svg>
+      <div class="label">Star Icon</div>
+    </div>
+  </div>
+</body>
+
+</html>

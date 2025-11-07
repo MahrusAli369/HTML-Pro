@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 22.1 - About Label</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        label {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+
+        label:hover {
+            color: #0056b3;
+        }
+
+        .example {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Label as Wrapper</h2>
+    <div class="example">
+        <label>
+            <input type="checkbox" name="cats"> I like Cats!
+        </label>
+    </div>
+
+    <h2>Label as Reference</h2>
+    <div class="example">
+        <input id="cats" type="checkbox" name="Cats">
+        <label for="cats">I like Cats!</label>
+    </div>
+</body>
+
+</html>

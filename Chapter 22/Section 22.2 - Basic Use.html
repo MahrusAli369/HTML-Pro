@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 22.2 - Basic Use</title>
+  <style>
+    body {
+      color: white;
+      background-color: black;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      margin: 150px auto;
+      background: #111;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 5px;
+      background: #222;
+      color: white;
+    }
+
+    input:focus {
+      outline: 2px solid yellow;
+      background: #333;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      color: blue;
+      font-size: 1.1em;
+      font-weight: bold;
+      font-family: Inter, Arial, sans-serif;
+      background-color: yellow;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      color: yellow;
+      background-color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="my-form" action="/login" method="POST">
+    <label for="username">Username / Email</label>
+    <input id="username" type="text" name="username" required />
+
+    <label for="pass">Password</label>
+    <input id="pass" type="password" name="pass" required />
+
+    <input type="submit" value="Login" />
+  </form>
+</body>
+
+</html>

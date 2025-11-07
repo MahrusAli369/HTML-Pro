@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 26.3 - HTML Progress Fallback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    progress {
+      width: 300px;
+      height: 25px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* Modern browser style */
+    progress::-webkit-progress-bar {
+      background-color: #ddd;
+      border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: #007bff;
+      border-radius: 10px;
+    }
+
+    progress::-moz-progress-bar {
+      background-color: #007bff;
+      border-radius: 10px;
+    }
+
+    /* Fallback for legacy browsers */
+    .progress-bar {
+      width: 300px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 25px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      line-height: 25px;
+    }
+
+    p {
+      margin-top: 15px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>HTML Progress Fallback Example</h1>
+  <progress max="100" value="20">
+    <div class="progress-bar">
+      <span style="width: 20%">Progress: 20%</span>
+    </div>
+  </progress>
+  <p>Modern browsers render the <code>progress</code> element. Older browsers show the styled fallback bar.</p>
+</body>
+
+</html>

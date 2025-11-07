@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 30.3 - Elements with Multiple Languages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+
+        p {
+            background: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #333;
+        }
+
+        span {
+            color: darkblue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Examples of Multiple Languages in a Single HTML Document</h2>
+
+    <!-- English with German -->
+    <p lang="en">This English sentence contains the German word <span lang="de">Hallo</span>.</p>
+
+    <!-- English with French -->
+    <p lang="en">She greeted me in French saying <span lang="fr">Bonjour</span>, which means "Good morning".</p>
+
+    <!-- English with Arabic -->
+    <p lang="en">In Arabic, "Peace" is written as <span lang="ar">سلام</span>.</p>
+
+    <!-- English with Urdu -->
+    <p lang="en">The Urdu translation of "Book" is <span lang="ur">کتاب</span>.</p>
+
+    <!-- English with all mixed -->
+    <p lang="en">
+        A multilingual phrase: <span lang="de">Guten Tag</span> (German),
+        <span lang="fr">Merci</span> (French),
+        <span lang="ar">مرحبا</span> (Arabic),
+        and <span lang="ur">شکریہ</span> (Urdu).
+    </p>
+
+    <!-- Optional internal JS to show detected languages -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const spans = document.querySelectorAll("[lang]");
+            console.log("Detected language attributes:");
+            spans.forEach(el => console.log(el.textContent.trim(), "→", el.getAttribute("lang")));
+        });
+    </script>
+</body>
+
+</html>

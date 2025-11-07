@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 30.2 - Element Language</title>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all elements that have a lang attribute
+      const langElements = document.querySelectorAll("[lang]");
+      const output = document.getElementById("lang-info");
+
+      langElements.forEach((el, index) => {
+        const tag = el.tagName.toLowerCase();
+        const lang = el.getAttribute("lang");
+        const text = el.textContent.trim().slice(0, 40) + "...";
+        const line = document.createElement("p");
+        line.textContent = `Element ${index + 1} <${tag}> has lang="${lang}" → Preview: "${text}"`;
+        output.appendChild(line);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h2>Element Language Demonstration</h2>
+
+  <p lang="en" title="The value of this attribute is also in English.">
+    The content of this element is in English.
+  </p>
+
+  <div lang="en">
+    <p>This element contains English content.</p>
+    <p title="This attribute, too.">Same with this element.</p>
+  </div>
+
+  <hr />
+  <h3>Detected Language Attributes:</h3>
+  <div id="lang-info" style="font-family: monospace; color: darkblue;"></div>
+
+  <!-- 
+      The lang attribute specifies the language of an element’s content and attributes.
+      Example:
+      <p lang="en">English content.</p>
+      <p lang="en" title="Attribute also in English.">Text here...</p>
+
+      Language declarations are inherited by child elements:
+      <div lang="en">
+        <p>English text.</p>
+        <p title="Also English.">...</p>
+      </div>
+    -->
+</body>
+
+</html>

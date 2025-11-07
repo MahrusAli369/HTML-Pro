@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 30.5 - Handling Attributes with Different Languages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .example {
+      background-color: #f9f9f9;
+      border-left: 4px solid #0077cc;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .lang-info {
+      background: #eef;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    span[lang] {
+      font-weight: bold;
+      color: #006600;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Handling Attributes with Different Languages</h2>
+
+  <p>
+    The <code>lang</code> attribute defines the language of text content or attribute values. It can be
+    overridden by child elements that declare a different language.
+  </p>
+
+  <div class="example">
+    <p lang="en" title="An English paragraph">
+      This paragraph is in English, but the next word is in German:
+      <span lang="de" title="A German sentence">Hallo Welt!</span>
+    </p>
+
+    <p lang="fr" title="A French paragraph">
+      Voici un paragraphe en français, mais ce mot est anglais:
+      <span lang="en" title="An English word">Hello!</span>
+    </p>
+
+    <p lang="ar" dir="rtl" title="An Arabic paragraph">
+      هذا النص بالعربية، ولكن الكلمة التالية بالإنجليزية:
+      <span lang="en">World!</span>
+    </p>
+  </div>
+
+  <div class="lang-info" id="langOutput">
+    <!-- JS will inject language details here -->
+  </div>
+
+  <script>
+    // Collect and display lang attributes dynamically
+    const elements = document.querySelectorAll("[lang]");
+    const output = document.getElementById("langOutput");
+
+    let info = "<strong>Detected Language Attributes:</strong><br>";
+    elements.forEach((el, i) => {
+      info += `${i + 1}. <code>${el.tagName.toLowerCase()}</code> — lang="<strong>${el.lang}</strong>"`;
+      if (el.title) info += ` (title: "${el.title}")`;
+      info += "<br>";
+    });
+
+    output.innerHTML = info;
+  </script>
+</body>
+
+</html>

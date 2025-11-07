@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30.4 - Regional URLs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.7;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .region-links {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        small {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Using <code>hreflang</code> for Regional URLs</h2>
+
+    <p>
+        The <code>hreflang</code> attribute specifies the language (and optionally region) of a linked resource.
+        It helps search engines and browsers identify language-targeted pages.
+    </p>
+
+    <div class="region-links">
+        <p>Try these regional versions of example sites:</p>
+
+        <p>
+            <a href="https://ur.wikipedia.org" hreflang="ur">Wikipedia (Urdu)</a> <br>
+            <a href="https://ar.wikipedia.org" hreflang="ar">Wikipedia (Arabic)</a><br>
+            <a href="https://es.wikipedia.org" hreflang="es">Wikipedia (Spanish)</a><br>
+            <a href="https://www.wikipedia.org" hreflang="en">Wikipedia (English)</a><br>
+            <a href="https://fr.wikipedia.org" hreflang="fr">Wikipedia (French)</a> <br>
+            <a href="https://de.wikipedia.org" hreflang="de">Wikipedia (German)</a>
+        </p>
+    </div>
+
+    <small>Reference: <a href="https://datatracker.ietf.org/doc/html/rfc5646" target="_blank">IETF RFC 5646 - Tags for
+            Identifying Languages</a></small>
+
+    <script>
+        // JS demo: show hreflang values of all links
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll("a[hreflang]");
+            console.log("Detected hreflang attributes:");
+            links.forEach(link => console.log(link.href, "→", link.getAttribute("hreflang")));
+        });
+    </script>
+</body>
+
+</html>

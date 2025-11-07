@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 23.2 - Output Element with Attributes</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            width: 300px;
+            background-color: #333;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: 2px solid yellow;
+        }
+
+        output {
+            display: block;
+            margin-top: 20px;
+            font-size: 22px;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Output Element with Attributes</h1>
+
+    <form id="form1" oninput="out1.value = parseInt(inp1.value || 0) * parseInt(inp2.value || 0)">
+        <input type="number" id="inp1" name="inp1" placeholder="Enter first number" />
+        <input type="number" id="inp2" name="inp2" placeholder="Enter second number" />
+    </form>
+
+    <output name="out1" form="form1" for="inp1 inp2">0</output>
+</body>
+
+</html>

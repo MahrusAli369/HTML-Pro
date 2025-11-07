@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 23.1 - Output Element Using For & Form Attributes</title>
+  <style>
+    body {
+      font-family: "Baloo 2", Arial, sans-serif;
+      color: white;
+      background-color: #454545;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    fieldset {
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid yellow;
+      background-color: #5a5a5a;
+    }
+
+    input {
+      width: 200px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: 2px solid yellow;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 20px;
+      text-align: center;
+      width: 30px;
+    }
+
+    .output {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    output {
+      color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Output Element Using For & Form Attributes</h1>
+
+  <form id="form1" name="form1" oninput="out1.value = parseInt(in1.value || 0, 10) + parseInt(in2.value || 0, 10)">
+    <fieldset>
+      <legend>Output Example</legend>
+      <input type="number" id="in1" name="in1" value="0" placeholder="Type First Value" />
+      <br />
+      <span>+</span>
+      <input type="number" id="in2" name="in2" value="0" placeholder="Type Second Value" />
+    </fieldset>
+  </form>
+
+  <div class="output">
+    <h2>
+      Output:
+      <output name="out1" for="in1 in2" form="form1">0</output>
+    </h2>
+  </div>
+</body>
+
+</html>

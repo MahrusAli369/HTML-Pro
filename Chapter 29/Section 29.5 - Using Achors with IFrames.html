@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 29.5 - Using Anchors with IFrames</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #0a66c2;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 80%;
+      height: 450px;
+      border: 4px solid #0a66c2;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #0a66c2;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background-color: #084a91;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Using Anchors with IFrames</h1>
+  <p>Click the button below to change the content of the iframe dynamically.</p>
+
+  <iframe src="https://source.unsplash.com/1200x600/?nature,water" name="myIframe"></iframe>
+
+  <br />
+
+  <a href="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    target="myIframe">
+    Change the Iframe content to a Pexels Image
+  </a>
+
+  <!-- 
+    Normally, a change of webpage within an IFrame is initiated from inside the IFrame itself. 
+    However, using an anchor tag with the "target" attribute set to the iframe's "name", 
+    you can change the iframe's content from outside.
+    
+    Example:
+    <iframe src="webpage.html" name="myIframe"></iframe>
+    <a href="different_webpage.html" target="myIframe">
+      Change the Iframe content to different_webpage.html
+    </a>
+
+    This demo uses Unsplash and Pexels image URLs to illustrate external content swapping.
+    -->
+</body>
+
+</html>

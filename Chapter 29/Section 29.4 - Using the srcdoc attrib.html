@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 29.4 - Using the "srcdoc" Attribute</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f7fa;
+      color: #222;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #0a66c2;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      border: 3px solid #0a66c2;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      margin: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Using the <code>srcdoc</code> Attribute</h1>
+  <p class="desc">
+    The <code>srcdoc</code> attribute defines inline HTML content directly inside an iframe.
+    If not supported, it falls back to the <code>src</code> attribute.
+  </p>
+
+  <div class="container">
+    <div>
+      <p class="desc">1. Simple srcdoc example:</p>
+      <iframe
+        srcdoc="<h2 style='color:#0a66c2;'>IFrames are cool!</h2><p>This content comes from the srcdoc attribute.</p>"
+        width="500" height="200"></iframe>
+    </div>
+
+    <div>
+      <p class="desc">2. Fallback to base.html if srcdoc is not supported:</p>
+      <iframe
+        srcdoc="<h2 style='color:#0a66c2;'>IFrames are cool!</h2><p>This is inline HTML, with a fallback page.</p>"
+        src="base.html" width="500" height="250"></iframe>
+    </div>
+
+    <div>
+      <p class="desc">3. Embedding Unsplash content with srcdoc:</p>
+      <iframe
+        srcdoc="<h3 style='color:#0a66c2;'>Unsplash Nature Preview</h3><img src='https://source.unsplash.com/800x400/?nature,water' style='width:100%;border-radius:8px;'>"
+        width="800" height="450"></iframe>
+    </div>
+
+    <div>
+      <p class="desc">4. Embedding Pexels content with srcdoc:</p>
+      <iframe
+        srcdoc="<h3 style='color:#0a66c2;'>Pexels City Preview</h3><img src='https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=800' style='width:100%;border-radius:8px;'>"
+        width="800" height="450"></iframe>
+    </div>
+  </div>
+
+  <!-- 
+    The srcdoc attribute specifies inline HTML as iframe content.
+    If srcdoc is unsupported, the browser uses src instead.
+    External content from Unsplash and Pexels is embedded via srcdoc to demonstrate inline HTML rendering.
+    -->
+</body>
+
+</html>

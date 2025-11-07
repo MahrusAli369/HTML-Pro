@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 29.2 - Sandboxing IFrames</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f5f7fa;
+            color: #222;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #0055a5;
+            margin-bottom: 30px;
+        }
+
+        iframe {
+            width: 80%;
+            height: 350px;
+            border: 2px solid #0077cc;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sandboxing Example</h1>
+
+    <p>1. Fully sandboxed iframe (no permissions granted)</p>
+    <iframe sandbox src="https://www.pexels.com"></iframe>
+
+    <p>2. Allow scripts and form submissions</p>
+    <iframe sandbox="allow-scripts allow-forms" src="https://unsplash.com"></iframe>
+
+    <p>3. Allow same-origin and top navigation (for demonstration only)</p>
+    <iframe sandbox="allow-same-origin allow-top-navigation" src="https://www.pexels.com/search/nature/"></iframe>
+
+    <!--
+  The following demonstrates sandboxing behaviors:
+  - Basic sandbox disables all scripts, forms, and navigation.
+  - "allow-scripts" and "allow-forms" permit limited dynamic interaction.
+  - "allow-same-origin" and "allow-top-navigation" provide advanced integration.
+  Use sandboxing to safely embed untrusted or external content.
+  -->
+</body>
+
+</html>

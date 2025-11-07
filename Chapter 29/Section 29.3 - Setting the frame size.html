@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 29.3 - Setting the Frame Size</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #eef2f7;
+            color: #222;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+
+        .frame-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        iframe {
+            border: 3px solid #0078d7;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .desc {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Setting the Frame Size and Sandbox Modes</h1>
+
+    <div class="frame-container">
+        <div>
+            <p class="desc">1. Default IFrame (No Sandbox) - Large Frame</p>
+            <iframe src="https://www.pexels.com/search/landscape/" width="800" height="500"></iframe>
+        </div>
+
+        <div>
+            <p class="desc">2. Sandboxed Frame (Restricted)</p>
+            <iframe sandbox src="https://unsplash.com/s/photos/nature" width="700" height="450"></iframe>
+        </div>
+
+        <div>
+            <p class="desc">3. Sandboxed Frame (Allow Scripts & Forms)</p>
+            <iframe sandbox="allow-scripts allow-forms" src="https://www.pexels.com/search/animals/" width="700"
+                height="450"></iframe>
+        </div>
+
+        <div>
+            <p class="desc">4. Sandboxed Frame (Allow Same-Origin & Top Navigation)</p>
+            <iframe sandbox="allow-same-origin allow-top-navigation" src="https://unsplash.com/s/photos/city"
+                width="800" height="500"></iframe>
+        </div>
+    </div>
+
+    <!-- 
+  The IFrame can be resized using the width and height attributes.
+  HTML5 allows only CSS pixel values for dimensions.
+  Different sandbox modes control content behavior and script permissions.
+  -->
+</body>
+
+</html>

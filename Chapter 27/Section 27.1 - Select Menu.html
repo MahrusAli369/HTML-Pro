@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 27.1 - Select Menu</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    select {
+      width: 220px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    hr {
+      width: 300px;
+      margin: 25px 0;
+      border: none;
+      border-top: 2px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Select Menu Example</h1>
+  <select name="numbers">
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+  </select>
+  <hr />
+  <select name="fruits" size="4">
+    <option value="Apple">Apple</option>
+    <option value="Mango">Mango</option>
+    <option value="Cherry">Cherry</option>
+    <option value="Orange">Orange</option>
+  </select>
+</body>
+
+</html>

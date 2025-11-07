@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section 27.3 - Option Groups</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #0066cc;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    select {
+      width: 260px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      background-color: #fff;
+      font-size: 1em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.3s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    }
+
+    optgroup {
+      font-weight: bold;
+      color: #444;
+    }
+
+    optgroup[disabled] {
+      color: #aaa;
+    }
+
+    option {
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Option Groups Example</h1>
+  <select>
+    <option value="select">Select</option>
+    <optgroup label="Fruits">
+      <option value="banana">Bananas</option>
+      <option value="strawberry">Strawberries</option>
+    </optgroup>
+    <optgroup label="Vegetables" disabled>
+      <option value="carrot">Carrots</option>
+      <option value="zucchini">Zucchini</option>
+    </optgroup>
+  </select>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section 27.2 - Multiple Options</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 250px;
+            height: 180px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        option[selected] {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Select Multiple Countries</h1>
+    <select multiple>
+        <option value="option1">Afghanistan</option>
+        <option value="option2">Bangladesh</option>
+        <option value="option3">Indonesia</option>
+        <option value="option4">Iran</option>
+        <option value="option5">Nigeria</option>
+        <option value="option6" selected>Pakistan</option>
+        <option value="option7">Qatar</option>
+        <option value="option8">Oman</option>
+        <option value="option9">Yeman</option>
+        <option value="option10">Niger</option>
+        <option value="option11">Malayisa</option>
+        <option value="option12">Iraq</option>
+    </select>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 34.1 - Block with pre and code</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f3f6fc;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        pre {
+            background: #ffffff;
+            padding: 18px;
+            border-left: 6px solid #1a237e;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        code {
+            font-family: Consolas, "Courier New", monospace;
+            color: #d50000;
+            font-size: 15px;
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #004d40;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Section 34.1 - Block with pre and code</h1>
+
+    <div class="example-title">Example 1: Python-style Code Block</div>
+    <pre><code>
+x = 42
+if x == 42:
+    print("x is exactly 42 — destiny fulfilled!")
+</code></pre>
+
+    <div class="example-title">Example 2: HTML Tags Inside Code Block</div>
+    <pre><code>
+&lt;div class="container"&gt;
+    &lt;h2&gt;Welcome to the Demo&lt;/h2&gt;
+    &lt;p&gt;This paragraph is displayed in raw HTML form.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <div class="example-title">Example 3: JavaScript Code With Syntax</div>
+    <pre><code>
+const score = 100;
+if (score >= 100) {
+    console.log("Achievement unlocked: Legendary Coder!");
+}
+</code></pre>
+
+</body>
+
+</html>

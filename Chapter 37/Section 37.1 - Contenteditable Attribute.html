@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 37.1 - Global Attributes & Contenteditable</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfdfd;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2980b9;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 2px solid #2980b9;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        p[contenteditable] {
+            padding: 10px 15px;
+            border: 2px solid #16a085;
+            border-radius: 5px;
+            background-color: #d0f0eb;
+            min-height: 40px;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: text;
+        }
+
+        p[contenteditable]:focus {
+            outline: none;
+            box-shadow: 0 0 10px #16a085;
+            transform: scale(1.02);
+        }
+
+        span[contenteditable="false"] {
+            background-color: #f9e6e6;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Global Attributes & Contenteditable</h1>
+
+    <h2>Common Global Attributes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>class</td>
+                <td>Defines one or more class names for an element.</td>
+            </tr>
+            <tr>
+                <td>contenteditable</td>
+                <td>Sets whether the content of an element can be edited.</td>
+            </tr>
+            <tr>
+                <td>contextmenu</td>
+                <td>Defines a context menu shown when a user right-clicks an element.</td>
+            </tr>
+            <tr>
+                <td>dir</td>
+                <td>Sets the text direction for text within an element.</td>
+            </tr>
+            <tr>
+                <td>draggable</td>
+                <td>Sets whether an element can be dragged.</td>
+            </tr>
+            <tr>
+                <td>hidden</td>
+                <td>Hides an element not currently in use on the page.</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>Defines a unique identifier for an element.</td>
+            </tr>
+            <tr>
+                <td>lang</td>
+                <td>Defines the language of an element's content and its text attribute values.</td>
+            </tr>
+            <tr>
+                <td>spellcheck</td>
+                <td>Sets whether to spell/grammar check the content of an element.</td>
+            </tr>
+            <tr>
+                <td>style</td>
+                <td>Defines a set of inline CSS styles for an element.</td>
+            </tr>
+            <tr>
+                <td>tabindex</td>
+                <td>Sets the order in which elements on a page are navigated by the Tab keyboard shortcut.</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>Defines additional information about an element, generally shown as tooltip text on mouseover.</td>
+            </tr>
+            <tr>
+                <td>translate</td>
+                <td>Defines whether to translate the content of an element.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Interactive Contenteditable</h2>
+
+    <p contenteditable>This is an editable paragraph. Click here to edit me!</p>
+
+    <p contenteditable>
+        This is an editable paragraph.
+        <span contenteditable="false">But not this part.</span>
+    </p>
+
+    <p class="note">
+        All child text of a contenteditable element will inherit editable behavior unless overridden with
+        <code>contenteditable="false"</code>.
+        Browsers will still show a text cursor inside uneditable children as inherited from the parent.
+    </p>
+</body>
+
+</html>

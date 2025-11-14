@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 35.2 - Block with &lt;blockquote&gt;</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 30px;
+            line-height: 1.7;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #27ae60;
+            margin-top: 25px;
+        }
+
+        blockquote {
+            background-color: #e8f6f3;
+            border-left: 5px solid #27ae60;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+
+        blockquote footer {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        cite a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        cite a:hover {
+            text-decoration: underline;
+        }
+
+        .example {
+            background-color: #dff9fb;
+            border-left: 5px solid #22a6b3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Block with &lt;blockquote&gt; Element</h1>
+
+    <p>The <code>&lt;blockquote&gt;</code> element is used for block-level quotes:</p>
+
+    <div class="example">
+        <blockquote>
+            <p>The answer is 42.</p>
+        </blockquote>
+    </div>
+
+    <h2>Using the cite Attribute</h2>
+    <p>The <code>cite</code> attribute references the URL of the quoted source:</p>
+
+    <div class="example">
+        <blockquote cite="http://example.com/blog/hello-world">
+            <p>The answer is 42.</p>
+        </blockquote>
+        <p>Note: Browsers typically don’t display the URL. If relevant, add a hyperlink:</p>
+        <blockquote>
+            <p>The answer is 42.</p>
+            <footer>
+                Source: <cite><a href="http://example.com/blog/hello-world" rel="external">Hello World</a></cite>
+            </footer>
+        </blockquote>
+    </div>
+
+    <h2>Citation and Attribution</h2>
+    <p>HTML5 allows the citation or attribution to be inside the blockquote using a <code>&lt;cite&gt;</code> or
+        <code>&lt;footer&gt;</code> element:</p>
+
+    <div class="example">
+        <blockquote cite="http://example.com/blog/hello-world">
+            <p>The answer is 42.</p>
+            <footer>
+                <p>Source: <cite><a href="http://example.com/blog/hello-world" rel="external">Hello World</a></cite></p>
+            </footer>
+        </blockquote>
+    </div>
+
+    <h2>Additional Examples</h2>
+    <div class="example">
+        <blockquote cite="https://www.example.org/quote1">
+            <p>Success is not final, failure is not fatal: it is the courage to continue that counts.</p>
+            <footer>
+                <p>Source: <cite><a href="https://www.example.org/quote1" target="_blank">Example.org</a></cite></p>
+            </footer>
+        </blockquote>
+
+        <blockquote>
+            <p>Life is what happens when you’re busy making other plans.</p>
+            <footer>
+                Author: <cite>John Lennon</cite>
+            </footer>
+        </blockquote>
+    </div>
+</body>
+
+</html>

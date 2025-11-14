@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 40.2 - Common Special Characters</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px 12px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .entity {
+            background-color: #1abc9c;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .entity:hover {
+            transform: scale(1.2);
+            background-color: #16a085;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 5px;
+            font-family: monospace;
+            background-color: #e0f7fa;
+            border-left: 4px solid #3498db;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #bdc3c7;
+        }
+
+        th,
+        td {
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Common Special Characters</h1>
+
+    <p>Some characters are reserved in HTML and must be used via entities to display properly.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Character</th>
+                <th>Description</th>
+                <th>Entity Name</th>
+                <th>Entity Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Non-breaking space</td>
+                <td>&amp;nbsp;</td>
+                <td>&amp;#160;</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Less than</td>
+                <td>&amp;lt;</td>
+                <td>&amp;#60;</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Greater than</td>
+                <td>&amp;gt;</td>
+                <td>&amp;#62;</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>Ampersand</td>
+                <td>&amp;amp;</td>
+                <td>&amp;#38;</td>
+            </tr>
+            <tr>
+                <td>&mdash;</td>
+                <td>Em dash</td>
+                <td>&amp;mdash;</td>
+                <td>&amp;#8212;</td>
+            </tr>
+            <tr>
+                <td>&ndash;</td>
+                <td>En dash</td>
+                <td>&amp;ndash;</td>
+                <td>&amp;#8211;</td>
+            </tr>
+            <tr>
+                <td>&copy;</td>
+                <td>Copyright</td>
+                <td>&amp;copy;</td>
+                <td>&amp;#169;</td>
+            </tr>
+            <tr>
+                <td>&reg;</td>
+                <td>Registered trademark</td>
+                <td>&amp;reg;</td>
+                <td>&amp;#174;</td>
+            </tr>
+            <tr>
+                <td>&trade;</td>
+                <td>Trademark</td>
+                <td>&amp;trade;</td>
+                <td>&amp;#8482;</td>
+            </tr>
+            <tr>
+                <td>&#9742;</td>
+                <td>Phone</td>
+                <td>&amp;phone;</td>
+                <td>&amp;#9742;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input type="text" id="charInput" placeholder="Click a symbol below..." />
+
+    <div class="entities">
+        <div class="entity" data-entity="&nbsp;">&nbsp;</div>
+        <div class="entity" data-entity="&lt;">&lt;</div>
+        <div class="entity" data-entity="&gt;">&gt;</div>
+        <div class="entity" data-entity="&amp;">&amp;</div>
+        <div class="entity" data-entity="&mdash;">&mdash;</div>
+        <div class="entity" data-entity="&ndash;">&ndash;</div>
+        <div class="entity" data-entity="&copy;">&copy;</div>
+        <div class="entity" data-entity="&reg;">&reg;</div>
+        <div class="entity" data-entity="&trade;">&trade;</div>
+        <div class="entity" data-entity="&#9742;">&#9742;</div>
+    </div>
+
+    <div class="feedback" id="feedback">Click a character above to insert it into the input field.</div>
+
+    <script src="Section 40.2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 40.1 - Character Entities</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefefe;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px 12px;
+            font-size: 16px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .entities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .entity {
+            background-color: #f1c40f;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .entity:hover {
+            transform: scale(1.2);
+            background-color: #f39c12;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 5px;
+            font-family: monospace;
+            background-color: #fef5e6;
+            border-left: 4px solid #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Character Entities in HTML</h1>
+    <p>
+        Many symbols and special characters are required while developing a web page. Character Entities allow you to
+        use symbols safely without interfering with HTML.
+        Click any symbol below to insert it into the input box.
+    </p>
+
+    <input type="text" id="charInput" placeholder="&#128269; Search" />
+
+    <div class="entities">
+        <div class="entity" data-entity="&#169;">&#169;</div>
+        <div class="entity" data-entity="&#174;">&#174;</div>
+        <div class="entity" data-entity="&#128512;">&#128512;</div>
+        <div class="entity" data-entity="&#128269;">&#128269;</div>
+        <div class="entity" data-entity="&hearts;">&hearts;</div>
+        <div class="entity" data-entity="&starf;">&starf;</div>
+        <div class="entity" data-entity="&#9733;">&#9733;</div>
+    </div>
+
+    <div class="feedback" id="feedback">Click a symbol to insert it into the input above.</div>
+
+    <script src="Section 40.1.js"></script>
+</body>
+
+</html>

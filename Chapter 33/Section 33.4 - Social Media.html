@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 33.4 - Social Media</title>
+
+    <style>
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #eef3ff;
+            color: #222;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #1d4ed8;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #00ffe5;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Social Media Metadata</h1>
+
+        <p>
+            Open Graph is a metadata standard that expands the typical information included
+            in a page’s head section. It enables social platforms—most notably Facebook—to
+            generate rich previews with titles, images, descriptions, and structured details
+            when users share links. Twitter and Google also use their own metadata formats
+            for enhanced sharing and rich preview cards.
+        </p>
+
+        <pre>
+Facebook / Open Graph
+<meta property="fb:app_id" content="123456789">
+<meta property="og:url" content="https://example.com/page.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Content Title">
+<meta property="og:image" content="https://example.com/image.jpg">
+<meta property="og:description" content="Description Here">
+<meta property="og:site_name" content="Site Name">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="">
+
+<!-- Facebook: https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<!-- Open Graph: http://ogp.me/ -->
+
+Facebook / Instant Articles
+<meta charset="utf-8">
+<meta property="op:markup_version" content="v1.0">
+
+<!-- Web version of the article -->
+<link rel="canonical" href="http://example.com/article.html">
+
+<!-- Instant Article style -->
+<meta property="fb:article_style" content="myarticlestyle">
+
+
+Twitter Metadata
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@site_account">
+<meta name="twitter:creator" content="@individual_account">
+<meta name="twitter:url" content="https://example.com/page.html">
+<meta name="twitter:title" content="Content Title">
+<meta name="twitter:description" content="Content description less than 200 characters">
+<meta name="twitter:image" content="https://example.com/image.jpg">
+
+
+Google+ / Schema.org
+<link href="https://plus.google.com/+YourPage" rel="publisher">
+<meta itemprop="name" content="Content Title">
+<meta itemprop="description" content="Content description less than 200 characters">
+<meta itemprop="image" content="https://example.com/image.jpg">
+        </pre>
+
+    </div>
+</body>
+
+</html>

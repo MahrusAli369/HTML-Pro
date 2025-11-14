@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+
+  <title>Section 33.2 - Robots</title>
+
+  <style>
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: #f8eeee;
+      color: #222;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px 50px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 25px;
+      color: #cc1f1f;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #1d1d1d;
+      color: #00ffd0;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      font-size: 15px;
+    }
+
+    table th,
+    table td {
+      border: 2px solid #222;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    table thead {
+      background: #cc1f1f;
+      color: white;
+    }
+
+    table tbody tr:nth-child(even) {
+      background: #ffecec;
+    }
+
+    strong {
+      color: #cc1f1f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Robots Meta Directive</h1>
+
+    <p>
+      The <strong>robots</strong> meta attribute controls whether search engine crawlers
+      may index your page or follow its links. It’s recognized by major
+      search engines and is essential for managing what content appears in
+      search results.
+    </p>
+
+    <pre>&lt;meta name="robots" content="noindex"&gt;</pre>
+
+    <p>
+      This example instructs all search engines to <strong>not index</strong> the page.
+      Other allowed directive values include:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Value / Directive</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>all</td>
+          <td>Equivalent to index, follow.</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>noindex</td>
+          <td>Do not index the page.</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>nofollow</td>
+          <td>Do not follow links on the page.</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>follow</td>
+          <td>Links may be followed.</td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>none</td>
+          <td>Equivalent to noindex, nofollow.</td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>noarchive</td>
+          <td>No cached version in results.</td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>nocache</td>
+          <td>Synonym of noarchive (Bing).</td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>nosnippet</td>
+          <td>No snippet shown in results.</td>
+        </tr>
+        <tr>
+          <td>9.</td>
+          <td>noodp</td>
+          <td>Do not use Open Directory metadata.</td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td>notranslate</td>
+          <td>No translation suggestions.</td>
+        </tr>
+        <tr>
+          <td>11.</td>
+          <td>noimageindex</td>
+          <td>Do not index images.</td>
+        </tr>
+        <tr>
+          <td>12.</td>
+          <td>unavailable_after</td>
+          <td>Hide after specific RFC-850 date.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>Note:</strong> Search engines assume “allowed” by default.
+      Only declare restrictions to avoid contradictions like <em>index</em> paired with <em>noindex</em>.
+    </p>
+  </div>
+</body>
+
+</html>

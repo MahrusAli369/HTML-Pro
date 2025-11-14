@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 33.7 - Phone Number Recognition</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6ff;
+            margin: 0;
+            padding: 25px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0a3d91;
+            font-size: 30px;
+            margin-bottom: 22px;
+        }
+
+        pre {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #0a3d91;
+            font-size: 15px;
+            white-space: pre-wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .demo-box {
+            margin-top: 28px;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-title {
+            font-weight: bold;
+            color: #d35400;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 180px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Section 33.7 - Phone Number Recognition</h1>
+
+    <pre>
+Mobile platforms like iOS automatically recognize phone numbers and turn them into tel: links. 
+While useful, this can incorrectly detect numbers such as ISBNs as phone numbers.
+
+To disable automatic phone-number detection in Safari and other WebKit-based browsers, use:
+
+    &lt;meta name="format-detection" content="telephone=no"&gt;
+
+    </pre>
+
+    <!-- LIVE DEMO -->
+    <div class="demo-box">
+        <div class="demo-title">Live Demo (Number Detection Comparison)</div>
+
+        <iframe srcdoc="
+            <html>
+            <head>
+                <style>
+                    body {
+                        font-family: Arial;
+                        padding: 10px;
+                        background: #eef4ff;
+                    }
+                    .box {
+                        background: white;
+                        padding: 12px;
+                        margin-bottom: 15px;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                    }
+                    .title {
+                        font-weight:bold;
+                        color:#0a3d91;
+                        margin-bottom:5px;
+                    }
+                </style>
+            </head>
+            <body>
+
+                <div class='box'>
+                    <div class='title'>With Auto-Detection (default browser behavior)</div>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+
+                <div class='box'>
+                    <div class='title'>Auto-Detection Disabled</div>
+                    <meta name='format-detection' content='telephone=no'>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</body>
+
+</html>

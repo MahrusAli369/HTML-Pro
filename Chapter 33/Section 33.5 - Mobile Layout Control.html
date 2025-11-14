@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 33.5 - Mobile Layout Control</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #004aad;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        pre {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #004aad;
+            font-size: 15px;
+            overflow-x: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        p {
+            background: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            line-height: 1.5;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #ff9800;
+        }
+
+        .demo-box {
+            margin-top: 30px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .demo-title {
+            font-size: 20px;
+            color: #d35400;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Section 33.5 - Mobile Layout Control</h1>
+
+    <pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+Attribute Description
+width          The width of the virtual viewport of the device.
+               Values1: device-width or a fixed pixel width (e.g., 480)
+
+height         The height of the virtual viewport of the device.
+               Values2: device-height or a fixed pixel height (e.g., 600)
+
+initial-scale  Sets the initial zoom when the page loads (1.0 = no zoom)
+
+minimum-scale  Minimum zoom level allowed (1.0 = no zoom)
+
+maximum-scale  Maximum zoom level allowed (1.0 = no zoom)
+
+user-scalable  Allows zooming: yes or no (default is yes)
+    </pre>
+
+    <p>
+        Notes:<br><br>
+        1 — The width property can be set in pixels (width=600) or by using device-width which
+        represents the actual physical width of the screen.<br><br>
+        2 — The height property follows the same rule: device-height or an exact pixel height.
+    </p>
+
+    <!-- LIVE DEMO -->
+    <div class="demo-box">
+        <div class="demo-title">Live Demo (Viewport Responsive Box)</div>
+        <iframe srcdoc="
+            <html>
+            <body style='margin:0; display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial; background:#e3f2fd;'>
+                <div style='padding:20px; background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center;'>
+                    <h2 style='color:#1976d2;'>Viewport Test</h2>
+                    <p style='font-size:16px;'>Resize your screen to see the behavior of responsive layout.</p>
+                </div>
+            </body>
+            </html>
+        ">
+        </iframe>
+    </div>
+
+</body>
+
+</html>

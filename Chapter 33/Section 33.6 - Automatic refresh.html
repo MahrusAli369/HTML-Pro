@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 33.6 - Automatic Refresh</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef4ff;
+            margin: 0;
+            padding: 25px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003f8c;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #003f8c;
+            font-size: 15px;
+            white-space: pre-wrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .demo-box {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-title {
+            font-weight: bold;
+            color: #d35400;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 180px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Section 33.6 - Automatic Refresh</h1>
+
+    <pre>
+To refresh the page every five seconds, add this meta element in the head element:
+
+    &lt;meta http-equiv="refresh" content="5"&gt;
+
+CAUTION! While this is a valid command, it is recommended that you do not use it because of its negative effects
+on user experience. Refreshing the page too often can cause it to become unresponsive, and often scrolls to the
+top of the page. If some information on the page needs to be updated continuously, there are much better ways to
+do that by only refreshing a portion of a page.
+    </pre>
+
+    <!-- LIVE DEMO -->
+    <div class="demo-box">
+        <div class="demo-title">Live Demo (Auto-Refresh Sandbox)</div>
+
+        <iframe srcdoc="
+            <html>
+            <head>
+                <meta http-equiv='refresh' content='5'>
+            </head>
+            <body style='font-family:Arial; background:#e8f4ff; margin:0; display:flex; justify-content:center; align-items:center; height:100%;'>
+                <div style='text-align:center;'>
+                    <h3 style='color:#0056b3; margin:0;'>This demo refreshes every 5 seconds</h3>
+                    <p style='margin:5px 0;'>Timestamp:</p>
+                    <p><script>document.write(new Date().toLocaleTimeString());</script></p>
+                </div>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</body>
+
+</html>

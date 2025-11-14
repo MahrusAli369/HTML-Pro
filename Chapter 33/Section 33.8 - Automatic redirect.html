@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 33.8 - Automatic Redirect</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f9ff;
+            margin: 0;
+            padding: 25px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #1a237e;
+            font-size: 15px;
+            white-space: pre-wrap;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .demo-box {
+            margin-top: 28px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-title {
+            font-size: 19px;
+            font-weight: bold;
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 150px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Section 33.8 - Automatic Redirect</h1>
+
+    <pre>
+Sometimes your webpage needs an automatic redirect.
+
+Example:
+    &lt;meta http-equiv="refresh" content="5;url=https://www.example.com/" /&gt;
+
+This sends the visitor to the specified website after 5 seconds.
+To change the delay time, edit the number before the ;url= part.
+    </pre>
+
+    <div class="demo-box">
+        <div class="demo-title">Live Demo (Simulated Redirect)</div>
+
+        <iframe srcdoc="
+            <html>
+            <head>
+                <meta http-equiv='refresh' content='5;url=https://example.com'>
+                <style>
+                    body { font-family: Arial; padding: 20px; background: #eef2ff; }
+                    p { font-size: 16px; }
+                </style>
+            </head>
+            <body>
+                <p>This demo will attempt to redirect to example.com in 5 seconds.</p>
+                <p>(Browsers may block redirects inside iframes.)</p>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</body>
+
+</html>

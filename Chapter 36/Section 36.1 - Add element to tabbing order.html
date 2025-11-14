@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 36.1 - Using Tabindex to Control Focus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f7;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.7;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        div[tabindex] {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            background-color: #d6eaf8;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        div[tabindex]:focus {
+            outline: none;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 2px solid #2980b9;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        p.note {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Using Tabindex to Control Focus</h1>
+
+    <p>Adding an element to the tabbing order allows it to be focused using the keyboard.</p>
+
+    <div tabindex="0">Focus me with Tab</div>
+    <div tabindex="1">Higher priority focus</div>
+    <div tabindex="2">Next in sequence</div>
+    <div tabindex="-1">Focusable, but skipped in Tab</div>
+
+    <p class="note">Note: It's recommended to use native HTML buttons or <code>&lt;a&gt;</code> elements where
+        appropriate.</p>
+
+    <h2>Tabindex Values and Meaning</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Value</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>negative</td>
+                <td>The element is focusable, but cannot be reached through sequential keyboard navigation.</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>The element is focusable and reachable through keyboard sequential navigation; order is defined by
+                    platform convention.</td>
+            </tr>
+            <tr>
+                <td>positive</td>
+                <td>The element is focusable and accessible via sequential keyboard navigation; order is determined by
+                    increasing tabindex values.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Try pressing <kbd>Tab</kbd> to navigate through the interactive elements above and observe how the focus changes.
+    </p>
+</body>
+
+</html>

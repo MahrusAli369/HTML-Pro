@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 36.3 - Define a Custom Tabbing Order</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fef9f0;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.7;
+        }
+
+        h1 {
+            color: #8e44ad;
+            border-bottom: 3px solid #8e44ad;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #8e44ad;
+            margin-top: 25px;
+        }
+
+        div[tabindex] {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 12px 25px;
+            border: 2px solid #8e44ad;
+            border-radius: 6px;
+            background-color: #e8daef;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        div[tabindex]:focus {
+            outline: none;
+            transform: scale(1.05);
+            box-shadow: 0 0 12px #8e44ad;
+        }
+
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Define a Custom Tabbing Order (Not Recommended)</h1>
+
+    <p>Elements can be assigned a positive <code>tabindex</code> value to control the tabbing order manually.</p>
+
+    <div tabindex="2">Second</div>
+    <div tabindex="1">First</div>
+    <div tabindex="3">Third</div>
+    <div tabindex="0">Default (native order)</div>
+
+    <p class="note">
+        Positive <code>tabindex</code> values insert the element at the specified position in the tabbing order.
+        Elements without a preference (i.e., <code>tabindex="0"</code> or native elements like <code>button</code> and
+        <code>a</code>) follow after those with positive values.
+    </p>
+
+    <h2>Important Considerations</h2>
+    <p>Using positive tabindex values is generally discouraged because it can disrupt expected keyboard navigation and
+        confuse users relying on screen readers.
+        A better approach is to arrange elements naturally in the DOM to reflect the desired navigation order.</p>
+
+    <div tabindex="4">Fourth</div>
+    <div tabindex="0">Fifth (default sequence)</div>
+    <div tabindex="5">Sixth</div>
+
+    <p class="note">Try pressing <kbd>Tab</kbd> to see how the focus follows the custom tabindex order above.</p>
+</body>
+
+</html>

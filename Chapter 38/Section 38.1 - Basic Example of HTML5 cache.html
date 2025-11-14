@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" manifest="index.appcache">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 38.1 - Basic Example of HTML5 Cache</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.7;
+        }
+
+        h1 {
+            color: #d35400;
+            border-bottom: 3px solid #d35400;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #d35400;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Basic Example of HTML5 Cache</h1>
+
+    <p>This example demonstrates using the HTML5 Application Cache to enable offline access to a webpage.</p>
+
+    <h2>Step 1: Create your index.html file</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html manifest="index.appcache"&gt;
+
+&lt;body&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </pre>
+
+    <h2>Step 2: Create the cache manifest file (index.appcache)</h2>
+    <pre>
+CACHE MANIFEST
+index.html
+    </pre>
+
+    <p>Make sure both files are saved in the same folder. Once you open <code>index.html</code> in a browser, it will
+        cache the page for offline use. Then, try going offline and reloading the page to see it served from the cache.
+    </p>
+
+    <p class="note">
+        Note: HTML5 Application Cache is now deprecated in favor of Service Workers for modern offline web applications,
+        but this example demonstrates the basic mechanism.
+    </p>
+</body>
+
+</html>

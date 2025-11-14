@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 39.2 - Keyboard Events</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.6;
+        }
+        
+        h1 {
+            color: #8e44ad;
+            border-bottom: 3px solid #8e44ad;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #8e44ad;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #8e44ad;
+            color: white;
+        }
+
+        input {
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #7f8c8d;
+            width: 200px;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #f4e1f2;
+            border-left: 4px solid #8e44ad;
+            font-family: monospace;
+        }
+
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Keyboard Events</h1>
+    <p>Keyboard events allow you to respond dynamically when a user presses, holds, or releases a key.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Event Attribute</th>
+                <th>Description</th>
+                <th>Interactive Demo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>onkeydown</td>
+                <td>Fires when a user is pressing a key</td>
+                <td>
+                    <input type="text" placeholder="Press a key" id="keydownInput">
+                    <div class="feedback" id="keydownFeedback">Waiting for keydown...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onkeypress</td>
+                <td>Fires when a user presses a character key</td>
+                <td>
+                    <input type="text" placeholder="Press a key" id="keypressInput">
+                    <div class="feedback" id="keypressFeedback">Waiting for keypress...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onkeyup</td>
+                <td>Fires when a user releases a key</td>
+                <td>
+                    <input type="text" placeholder="Release a key" id="keyupInput">
+                    <div class="feedback" id="keyupFeedback">Waiting for keyup...</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="note">
+        Try typing in each input field. The feedback area below each field updates in real-time to show which key is
+        pressed, held, or released.
+    </p>
+    <script src="Section 39.2.js"></script>
+</body>
+
+</html>

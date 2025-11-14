@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 39.1 - HTML Form Events</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefefe;
+            color: #2c3e50;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #c0392b;
+            border-bottom: 3px solid #c0392b;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #c0392b;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #7f8c8d;
+            width: 200px;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #fdf2f2;
+            border-left: 4px solid #c0392b;
+            font-family: monospace;
+        }
+
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML Form Events</h1>
+    <p>Form elements trigger events when users interact with them. See below for interactive demonstrations.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Event Attribute</th>
+                <th>Description</th>
+                <th>Live Demo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>onblur</td>
+                <td>Fires when the element loses focus</td>
+                <td>
+                    <input type="text" placeholder="Click and leave" id="blurInput">
+                    <div class="feedback" id="blurFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onchange</td>
+                <td>Fires when the value of an element is changed</td>
+                <td>
+                    <select id="changeSelect">
+                        <option value="">Select</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                    </select>
+                    <div class="feedback" id="changeFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>oncontextmenu</td>
+                <td>Fires on right-click</td>
+                <td>
+                    <input type="text" placeholder="Right-click me" id="contextInput">
+                    <div class="feedback" id="contextFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onfocus</td>
+                <td>Fires when element receives focus</td>
+                <td>
+                    <input type="text" placeholder="Focus here" id="focusInput">
+                    <div class="feedback" id="focusFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>oninput</td>
+                <td>Fires on user input</td>
+                <td>
+                    <input type="text" placeholder="Type here" id="inputEvent">
+                    <div class="feedback" id="inputFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>oninvalid</td>
+                <td>Fires when element is invalid</td>
+                <td>
+                    <input type="email" placeholder="Enter email" required id="invalidInput">
+                    <div class="feedback" id="invalidFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onreset</td>
+                <td>Fires when form is reset</td>
+                <td>
+                    <form id="resetForm">
+                        <input type="text" placeholder="Some input"><br>
+                        <button type="reset">Reset</button>
+                    </form>
+                    <div class="feedback" id="resetFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onsearch</td>
+                <td>Fires when input in a search field is used</td>
+                <td>
+                    <input type="search" placeholder="Search here" id="searchInput">
+                    <div class="feedback" id="searchFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onselect</td>
+                <td>Fires after text is selected</td>
+                <td>
+                    <input type="text" value="Select me" id="selectInput">
+                    <div class="feedback" id="selectFeedback">Waiting...</div>
+                </td>
+            </tr>
+            <tr>
+                <td>onsubmit</td>
+                <td>Fires when form is submitted</td>
+                <td>
+                    <form id="submitForm">
+                        <input type="text" placeholder="Type here">
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div class="feedback" id="submitFeedback">Waiting...</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note">Interact with each form element to see real-time updates for all common form events.</p>
+    <script src="Section 39.1.js"></script>
+</body>
+
+</html>

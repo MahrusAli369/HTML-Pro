@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.18 - Role Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        form,
+        [role="form"] {
+            background-color: #dfe6e9;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+        }
+
+        fieldset {
+            border: 1px solid #2980b9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 6px 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            border: 1px solid #2980b9;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c5980;
+        }
+
+        [role="tooltip"] {
+            background-color: #ffeaa7;
+            border: 1px solid #fdcb6e;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Form Example</h1>
+
+    <!-- Semantic HTML form -->
+    <form id="loginForm">
+        <fieldset>
+            <legend>Login Form</legend>
+            <div>
+                <label for="username">Your username</label>
+                <input type="text" id="username" aria-describedby="username-tip" required />
+                <div role="tooltip" id="username-tip">Your username is your email address</div>
+            </div>
+            <div>
+                <label for="password">Your password</label>
+                <input type="password" id="password" aria-describedby="password-tip" required />
+                <div role="tooltip" id="password-tip">Was emailed to you when you signed up</div>
+            </div>
+            <button type="submit">Login</button>
+        </fieldset>
+    </form>
+
+    <!-- Non-semantic div with role=form (not recommended) -->
+    <div role="form" style="margin-top:30px;">
+        <input type="email" placeholder="Your email address">
+        <button id="signupBtn">Sign up</button>
+    </div>
+
+    <script>
+        // Interactive: simple form submit alerts
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Login form submitted!\nUsername: ' + document.getElementById('username').value);
+        });
+
+        document.getElementById('signupBtn').addEventListener('click', function () {
+            alert('Sign up button clicked!');
+        });
+    </script>
+
+</body>
+
+</html>

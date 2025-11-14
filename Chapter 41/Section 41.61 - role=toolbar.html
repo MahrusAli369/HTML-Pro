@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.61 - Role Toolbar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="toolbar"] {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        ul[role="toolbar"] li {
+            display: inline-block;
+        }
+
+        ul[role="toolbar"] img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1px solid #bdc3c7;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        ul[role="toolbar"] img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .log {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Toolbar</h1>
+    <p>Click an icon to see the corresponding action:</p>
+
+    <ul role="toolbar">
+        <li><img src="new.png" alt="New" data-action="New Document"></li>
+        <li><img src="open.png" alt="Open" data-action="Open Document"></li>
+        <li><img src="save.png" alt="Save" data-action="Save Document"></li>
+        <li><img src="close.png" alt="Close" data-action="Close Document"></li>
+    </ul>
+
+    <div class="log" id="actionLog">Action log will appear here...</div>
+
+    <script>
+        const toolbar = document.querySelectorAll('ul[role="toolbar"] img');
+        const log = document.getElementById('actionLog');
+
+        toolbar.forEach(btn => {
+            btn.addEventListener('click', () => {
+                log.textContent = `You clicked: ${btn.getAttribute('data-action')}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

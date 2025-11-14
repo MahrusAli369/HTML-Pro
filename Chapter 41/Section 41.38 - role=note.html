@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.38 - Role Note</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        p[role="note"] {
+            background-color: #ffeaa7;
+            padding: 10px 15px;
+            border-left: 5px solid #e67e22;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        p[role="note"]:hover {
+            background-color: #fdcb6e;
+            transform: scale(1.02);
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dfe6e9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Note</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget.</p>
+
+    <p role="note" id="note1">This is a note: pay attention to the highlighted info.</p>
+    <p role="note" id="note2">Another note: important details are here.</p>
+
+    <div class="output" id="output">Click a note to see details.</div>
+
+    <script>
+        const notes = document.querySelectorAll('p[role="note"]');
+        const output = document.getElementById('output');
+
+        notes.forEach(note => {
+            note.addEventListener('click', () => {
+                output.textContent = `Selected note: ${note.textContent}`;
+                notes.forEach(n => n.style.borderColor = '#e67e22'); // reset others
+                note.style.borderColor = '#d63031'; // highlight clicked note
+            });
+        });
+    </script>
+
+</body>
+
+</html>

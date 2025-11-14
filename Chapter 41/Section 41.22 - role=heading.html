@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.22 - Role Heading</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1[role="heading"] {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        #toggleText {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #dfe6e9;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 role="heading" id="mainHeading">Introduction</h1>
+
+    <p>This heading can be clicked to reveal additional content below.</p>
+
+    <div id="toggleText" style="display:none;">
+        Welcome! This interactive section demonstrates a heading role in action. Click the heading to toggle this text.
+    </div>
+
+    <script>
+        const heading = document.getElementById('mainHeading');
+        const toggleText = document.getElementById('toggleText');
+
+        heading.addEventListener('click', () => {
+            toggleText.style.display = toggleText.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+
+</html>

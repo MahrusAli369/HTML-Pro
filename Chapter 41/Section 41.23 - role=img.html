@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.23 - Role Image</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        figure[role="img"] {
+            display: inline-block;
+            border: 2px solid #dfe6e9;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        figure[role="img"]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-style: italic;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Image</h1>
+
+    <figure role="img" id="catFigure">
+        <img alt="A cute cat." src="albert.jpg" width="300">
+        <figcaption>This is my cat, Albert.</figcaption>
+    </figure>
+
+    <div id="infoBox" style="margin-top:15px; display:none; font-weight:bold; color:#e67e22;">
+        Clicked the cat image! Albert says hello. 🐱
+    </div>
+
+    <script>
+        const catFigure = document.getElementById('catFigure');
+        const infoBox = document.getElementById('infoBox');
+
+        catFigure.addEventListener('click', () => {
+            infoBox.style.display = infoBox.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+
+</html>

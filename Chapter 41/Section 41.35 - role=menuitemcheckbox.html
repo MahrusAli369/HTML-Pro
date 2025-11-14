@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.35 - Role Menuitemcheckbox</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="menu"] {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            width: max-content;
+        }
+
+        li[role^="menuitem"] {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-right: 1px solid #bdc3c7;
+            transition: background-color 0.3s ease;
+        }
+
+        li[role^="menuitem"]:last-child {
+            border-right: none;
+        }
+
+        li[role^="menuitem"]:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dfe6e9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Menuitemcheckbox</h1>
+
+    <p>Click the "Word wrap" item to toggle its checked state:</p>
+
+    <ul role="menu" id="menu">
+        <li role="menuitem">Console</li>
+        <li role="menuitem">Layout</li>
+        <li role="menuitemcheckbox" aria-checked="true" id="wordWrap">Word wrap ✅</li>
+    </ul>
+
+    <div class="output" id="output">Current state: Word wrap is checked</div>
+
+    <script>
+        const checkboxItem = document.getElementById('wordWrap');
+        const output = document.getElementById('output');
+
+        checkboxItem.addEventListener('click', () => {
+            const isChecked = checkboxItem.getAttribute('aria-checked') === 'true';
+            checkboxItem.setAttribute('aria-checked', !isChecked);
+            checkboxItem.textContent = `Word wrap ${!isChecked ? '✅' : '❌'}`;
+            output.textContent = `Current state: Word wrap is ${!isChecked ? 'checked' : 'unchecked'}`;
+        });
+    </script>
+
+</body>
+
+</html>

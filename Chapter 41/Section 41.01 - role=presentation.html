@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.1 - Role Presentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .float-box {
+            width: 45%;
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .left {
+            float: left;
+            background-color: #3498db;
+        }
+
+        .right {
+            float: right;
+            background-color: #1abc9c;
+        }
+
+        .clear-box {
+            clear: both;
+            background-color: #95a5a6;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .clear-box:hover {
+            background-color: #7f8c8d;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-style: italic;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Presentation Example</h1>
+
+    <p>An element with <code>role="presentation"</code> is used to indicate that it has no accessibility semantics. Here
+        it is used to clear floated elements.</p>
+
+    <div class="float-box left">Left Box</div>
+    <div class="float-box right">Right Box</div>
+
+    <div class="clear-box" role="presentation" id="clearBox">Click me to clear floats and show feedback</div>
+
+    <div class="feedback" id="feedback">Float clearing not yet triggered.</div>
+
+    <script>
+        // Internal JS for simple interactive feedback
+        const clearBox = document.getElementById('clearBox');
+        const feedback = document.getElementById('feedback');
+
+        clearBox.addEventListener('click', () => {
+            feedback.textContent = "Floats cleared! This div has role='presentation'.";
+        });
+    </script>
+</body>
+
+</html>

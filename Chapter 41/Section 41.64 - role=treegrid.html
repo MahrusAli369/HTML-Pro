@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.64 - Role Treegrid</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table[role="treegrid"] {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table[role="treegrid"] th,
+        table[role="treegrid"] td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr[role="row"] {
+            cursor: pointer;
+        }
+
+        tr[role="row"] .toggle::before {
+            content: "▶";
+            display: inline-block;
+            width: 15px;
+            transition: transform 0.2s;
+        }
+
+        tr[role="row"].expanded .toggle::before {
+            transform: rotate(90deg);
+        }
+
+        tr[role="row"].child-row {
+            display: none;
+            background-color: #fafafa;
+        }
+
+        tr[role="row"].expanded+tr.child-row {
+            display: table-row;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Treegrid</h1>
+    <p>Click on the main rows to expand/collapse nested rows:</p>
+
+    <table role="treegrid">
+        <thead>
+            <tr>
+                <th>Section</th>
+                <th>Topic</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr role="row" class="parent-row">
+                <td class="toggle">Part 1</td>
+                <td>Introduction</td>
+                <td>Complete</td>
+            </tr>
+            <tr role="row" class="child-row">
+                <td>Chapter 1</td>
+                <td>Basics</td>
+                <td>Pending</td>
+            </tr>
+            <tr role="row" class="child-row">
+                <td>Chapter 2</td>
+                <td>Advanced</td>
+                <td>Pending</td>
+            </tr>
+
+            <tr role="row" class="parent-row">
+                <td class="toggle">Part 2</td>
+                <td>Intermediate</td>
+                <td>Complete</td>
+            </tr>
+            <tr role="row" class="child-row">
+                <td>Chapter 3</td>
+                <td>Deep Dive</td>
+                <td>Pending</td>
+            </tr>
+            <tr role="row" class="child-row">
+                <td>Chapter 4</td>
+                <td>Examples</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Expand/collapse functionality
+        const parentRows = document.querySelectorAll('tr.parent-row');
+        parentRows.forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.toggle('expanded');
+
+                // Expand/collapse all subsequent sibling child rows until next parent
+                let next = row.nextElementSibling;
+                while (next && next.classList.contains('child-row')) {
+                    next.style.display = row.classList.contains('expanded') ? 'table-row' : 'none';
+                    next = next.nextElementSibling;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

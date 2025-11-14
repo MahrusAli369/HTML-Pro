@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.48 - Role Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="search"] {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        [role="searchbox"] {
+            padding: 8px;
+            width: 250px;
+            border: 2px solid #2980b9;
+            border-radius: 4px;
+        }
+
+        [role="button"] {
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        [role="button"]:hover {
+            background-color: #2980b9;
+        }
+
+        #results {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            background-color: #eaf2f8;
+        }
+
+        .item {
+            padding: 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Search</h1>
+
+    <div role="search">
+        <input role="searchbox" type="text" id="searchInput" placeholder="Type a keyword...">
+        <button role="button" id="searchBtn">Search</button>
+    </div>
+
+    <div id="results">
+        <p>Search results will appear here...</p>
+    </div>
+
+    <script>
+        const dataItems = [
+            "Apple pie recipe",
+            "Banana smoothie",
+            "Chocolate cake",
+            "Apple cider vinegar benefits",
+            "Blueberry muffins",
+            "Cherry tart"
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const results = document.getElementById('results');
+
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.toLowerCase();
+            results.innerHTML = '';
+            const filtered = dataItems.filter(item => item.toLowerCase().includes(query));
+            if (filtered.length === 0) {
+                results.innerHTML = "<p>No matches found.</p>";
+            } else {
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'item';
+                    div.textContent = item;
+                    results.appendChild(div);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

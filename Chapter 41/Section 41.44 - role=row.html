@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.44 - Role Row</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #2980b9;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr[role="row"]:hover {
+            background-color: #d6eaf8;
+            cursor: pointer;
+        }
+
+        #selectedRow {
+            font-size: 1.1rem;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Row</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Task</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr role="row">
+                <td>Monday</td>
+                <td>Design UI</td>
+                <td>Pending</td>
+            </tr>
+            <tr role="row">
+                <td>Tuesday</td>
+                <td>Develop Backend</td>
+                <td>In Progress</td>
+            </tr>
+            <tr role="row">
+                <td>Wednesday</td>
+                <td>Test Features</td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="selectedRow">Selected Row: None</div>
+
+    <script>
+        const rows = document.querySelectorAll('[role="row"]');
+        const display = document.getElementById('selectedRow');
+
+        rows.forEach((row, index) => {
+            row.addEventListener('click', () => {
+                display.textContent = `Selected Row: ${index + 1} (${row.cells[0].textContent} - ${row.cells[1].textContent})`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

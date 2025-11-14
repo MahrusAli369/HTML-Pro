@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.47 - Role Scrollbar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        #content1 {
+            width: 300px;
+            height: 150px;
+            overflow: hidden;
+            border: 2px solid #2980b9;
+            padding: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        [role="scrollbar"] {
+            width: 20px;
+            height: 150px;
+            background-color: #bdc3c7;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .scrollhandle {
+            width: 100%;
+            height: 40px;
+            background-color: #3498db;
+            position: absolute;
+            top: 0;
+            transition: top 0.2s;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Scrollbar</h1>
+
+    <div id="content1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        <p>Cras vehicula, mi eget laoreet consequat, justo felis consectetur sapien, in malesuada arcu ligula eget
+            magna.</p>
+        <p>Curabitur tincidunt, sem a tincidunt placerat, libero magna fermentum mi, a ultrices velit elit sit amet
+            velit.</p>
+        <p>Sed pulvinar, urna at cursus laoreet, sapien erat dapibus est, ut fermentum justo nisi at ligula.</p>
+    </div>
+
+    <div role="scrollbar" aria-controls="content1" aria-orientation="vertical" aria-valuemax="100" aria-valuemin="0"
+        aria-valuenow="0">
+        <div class="scrollhandle"></div>
+    </div>
+
+    <script>
+        const scrollbar = document.querySelector('[role="scrollbar"]');
+        const handle = document.querySelector('.scrollhandle');
+        const content = document.getElementById('content1');
+        const maxScroll = content.scrollHeight - content.clientHeight;
+        let dragging = false;
+
+        handle.addEventListener('mousedown', () => dragging = true);
+        document.addEventListener('mouseup', () => dragging = false);
+        document.addEventListener('mousemove', e => {
+            if (!dragging) return;
+            const rect = scrollbar.getBoundingClientRect();
+            let newTop = e.clientY - rect.top - handle.offsetHeight / 2;
+            newTop = Math.max(0, Math.min(newTop, rect.height - handle.offsetHeight));
+            handle.style.top = newTop + 'px';
+            const scrollPercent = newTop / (rect.height - handle.offsetHeight);
+            content.scrollTop = scrollPercent * maxScroll;
+        });
+    </script>
+
+</body>
+
+</html>

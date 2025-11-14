@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.5 - Role Article</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        article,
+        .article-div {
+            border: 2px solid #3498db;
+            background-color: #eaf4fc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .interactive {
+            margin-top: 10px;
+            font-style: italic;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Article Example</h1>
+
+    <p>The <code>role="article"</code> indicates a standalone composition within a document. Here are two ways to define
+        an article:</p>
+
+    <article>
+        <h2>My first article (semantic element)</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet.</p>
+    </article>
+
+    <div class="article-div" role="article">
+        <h2>My first article (non-semantic div with role="article")</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet.</p>
+        <button id="showMore">Read More</button>
+        <div class="interactive" id="moreText" style="display:none;">Here is some additional content dynamically
+            revealed!</div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('showMore');
+        const moreText = document.getElementById('moreText');
+
+        btn.addEventListener('click', () => {
+            if (moreText.style.display === 'none') {
+                moreText.style.display = 'block';
+                btn.textContent = 'Hide';
+            } else {
+                moreText.style.display = 'none';
+                btn.textContent = 'Read More';
+            }
+        });
+    </script>
+</body>
+
+</html>

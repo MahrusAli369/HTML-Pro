@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.55 - Role Tab</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="tablist"] {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        li[role="tab"] {
+            padding: 10px 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            border: 1px solid #bdc3c7;
+        }
+
+        li[role="tab"].active {
+            background-color: #e67e22;
+            color: white;
+            border-bottom: 3px solid #e67e22;
+        }
+
+        .tab-content {
+            border: 1px solid #bdc3c7;
+            border-radius: 0 5px 5px 5px;
+            padding: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Tab</h1>
+
+    <p>Click a tab to display the associated content. This simple tab interface uses ARIA roles for accessibility.</p>
+
+    <ul role="tablist" id="tabs">
+        <li role="tab" class="active" data-content="content1">Introduction</li>
+        <li role="tab" data-content="content2">Chapter 1</li>
+        <li role="tab" data-content="content3">Chapter 2</li>
+    </ul>
+
+    <div class="tab-content" id="content1">Welcome to the Introduction section. Here we explain the overview of our
+        content.</div>
+    <div class="tab-content" id="content2" style="display:none;">Chapter 1 details key concepts with examples and
+        illustrations.</div>
+    <div class="tab-content" id="content3" style="display:none;">Chapter 2 explores advanced topics with interactive
+        demonstrations.</div>
+
+    <script>
+        const tabs = document.querySelectorAll('li[role="tab"]');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Deactivate all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Hide all contents
+                contents.forEach(c => c.style.display = 'none');
+
+                // Activate clicked tab
+                tab.classList.add('active');
+                // Show associated content
+                const contentId = tab.getAttribute('data-content');
+                document.getElementById(contentId).style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

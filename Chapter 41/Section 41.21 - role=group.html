@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.21 - Role Group</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c5980;
+        }
+
+        [role="group"] {
+            border: 2px dashed #2980b9;
+            padding: 15px;
+            display: inline-block;
+            border-radius: 8px;
+            background-color: #dfe6e9;
+        }
+
+        #display {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Group Example</h1>
+
+    <p>This group simulates navigation buttons:</p>
+
+    <div role="group" aria-label="Navigation Buttons">
+        <button role="button" id="prevBtn">Previous</button>
+        <button role="button" id="nextBtn">Next</button>
+    </div>
+
+    <div id="display">Current item: 1</div>
+
+    <script>
+        let currentItem = 1;
+        const display = document.getElementById('display');
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentItem > 1) currentItem--;
+            display.textContent = `Current item: ${currentItem}`;
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentItem++;
+            display.textContent = `Current item: ${currentItem}`;
+        });
+    </script>
+
+</body>
+
+</html>

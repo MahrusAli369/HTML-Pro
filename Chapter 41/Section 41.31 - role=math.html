@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.31 - Role Math</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .formula-container {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            width: 320px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .explanation {
+            background-color: #dfe6e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Math</h1>
+
+    <p>This section represents a mathematical expression using <code>role="math"</code>. Click below to see an
+        explanation:</p>
+
+    <div class="formula-container">
+        <img role="math" alt="y = mx + b" src="slope.png" width="150">
+    </div>
+
+    <button id="showExplanation">Show Explanation</button>
+
+    <div class="explanation" id="explanation">
+        <p><strong>y = mx + b</strong> is the equation of a straight line:</p>
+        <ul>
+            <li><strong>m</strong>: slope of the line</li>
+            <li><strong>x</strong>: independent variable</li>
+            <li><strong>b</strong>: y-intercept</li>
+        </ul>
+    </div>
+
+    <script>
+        const button = document.getElementById('showExplanation');
+        const explanation = document.getElementById('explanation');
+
+        button.addEventListener('click', () => {
+            if (explanation.style.display === 'none') {
+                explanation.style.display = 'block';
+                button.textContent = 'Hide Explanation';
+            } else {
+                explanation.style.display = 'none';
+                button.textContent = 'Show Explanation';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

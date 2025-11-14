@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.39 - Role Option</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="listbox"] {
+            list-style: none;
+            padding: 0;
+            max-width: 300px;
+        }
+
+        li[role="option"] {
+            background-color: #ffeaa7;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-left: 5px solid #e67e22;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        li[role="option"]:hover {
+            background-color: #fdcb6e;
+            transform: scale(1.02);
+        }
+
+        li[role="option"].selected {
+            border-color: #d63031;
+            background-color: #fab1a0;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dfe6e9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Option</h1>
+
+    <p>Select an option from the list below:</p>
+    <ul role="listbox" id="optionList">
+        <li role="option">Option 1</li>
+        <li role="option">Option 2</li>
+        <li role="option">Option 3</li>
+    </ul>
+
+    <div class="output" id="output">No option selected yet.</div>
+
+    <script>
+        const options = document.querySelectorAll('li[role="option"]');
+        const output = document.getElementById('output');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // remove 'selected' from all
+                options.forEach(opt => opt.classList.remove('selected'));
+                // add 'selected' to clicked
+                option.classList.add('selected');
+                // update output
+                output.textContent = `You selected: ${option.textContent}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

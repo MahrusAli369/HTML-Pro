@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.8 - Role Cell</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #2980b9;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        td[role="cell"] {
+            background-color: #ecf0f1;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        td[role="cell"]:hover {
+            background-color: #d6eaf8;
+        }
+
+        .interactive-output {
+            margin-top: 15px;
+            font-style: italic;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Cell Example</h1>
+    <p>The <code>role="cell"</code> attribute marks an element as a cell within a tabular container. You can interact
+        with cells below:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Math</th>
+                <th>Science</th>
+                <th>English</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td role="cell">95</td>
+                <td role="cell">88</td>
+                <td role="cell">76</td>
+            </tr>
+            <tr>
+                <td role="cell">82</td>
+                <td role="cell">91</td>
+                <td role="cell">85</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="interactive-output" id="output">Click a cell to see its value</div>
+
+    <script>
+        const cells = document.querySelectorAll('td[role="cell"]');
+        const output = document.getElementById('output');
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                output.textContent = `You clicked cell with value: ${cell.textContent}`;
+            });
+        });
+    </script>
+</body>
+
+</html>

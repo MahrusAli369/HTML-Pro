@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.43 - Role Radiogroup</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="radiogroup"] {
+            padding: 20px;
+            background-color: #dff0d8;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            width: fit-content;
+            font-size: 1.1rem;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        label {
+            margin-right: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #selectedValue {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Radiogroup</h1>
+
+    <div role="radiogroup" id="radioGroup">
+        <label><input role="radio" type="radio" name="options" value="One" checked> One</label>
+        <label><input role="radio" type="radio" name="options" value="Two"> Two</label>
+        <label><input role="radio" type="radio" name="options" value="Three"> Three</label>
+    </div>
+
+    <div id="selectedValue">Selected: One</div>
+
+    <script>
+        const radios = document.querySelectorAll('[role="radio"]');
+        const display = document.getElementById('selectedValue');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                display.textContent = `Selected: ${radio.value}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

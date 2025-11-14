@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.62 - Role Tooltip</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        span[aria-describedby] {
+            border-bottom: 1px dotted #2980b9;
+            cursor: pointer;
+            position: relative;
+            color: #2980b9;
+        }
+
+        [role="tooltip"] {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            top: 25px;
+            left: 0;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        span:hover+[role="tooltip"],
+        span:focus+[role="tooltip"] {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Tooltip</h1>
+    <p>Hover over the term to see its description:</p>
+
+    <span aria-describedby="slopedesc" tabindex="0">Slope</span>
+    <div role="tooltip" id="slopedesc">y = mx + b (linear equation slope)</div>
+
+    <p>Hover over another term:</p>
+    <span aria-describedby="angledesc" tabindex="0">Angle</span>
+    <div role="tooltip" id="angledesc">The measure between two lines or planes.</div>
+
+    <script>
+        // Optional: Smooth fade-in effect for tooltip
+        const tooltips = document.querySelectorAll('[role="tooltip"]');
+        tooltips.forEach(tt => {
+            const trigger = document.querySelector(`[aria-describedby="${tt.id}"]`);
+            trigger.addEventListener('mouseenter', () => tt.style.opacity = '1');
+            trigger.addEventListener('mouseleave', () => tt.style.opacity = '0');
+            trigger.addEventListener('focus', () => tt.style.opacity = '1');
+            trigger.addEventListener('blur', () => tt.style.opacity = '0');
+            tt.style.transition = 'opacity 0.3s';
+            tt.style.opacity = '0';
+        });
+    </script>
+
+</body>
+
+</html>

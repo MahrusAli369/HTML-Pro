@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.3 - Role Alertdialog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .alertdialog {
+            border: 2px solid #e74c3c;
+            background-color: #fdecea;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .alertdialog h2 {
+            margin-top: 0;
+            color: #c0392b;
+        }
+
+        .alert-box {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .alert-box:hover {
+            transform: scale(1.05);
+            background-color: #c0392b;
+        }
+
+        .feedback {
+            font-style: italic;
+            color: #e67e22;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Alertdialog Example</h1>
+
+    <p>The <code>role="alertdialog"</code> is used for dialogs containing urgent messages. Focus typically goes to an
+        element inside the dialog.</p>
+
+    <div class="alertdialog" role="alertdialog" aria-labelledby="dialogTitle">
+        <h2 id="dialogTitle">Warning</h2>
+        <div class="alert-box" role="alert" aria-live="assertive" id="alertBox">
+            Your session will expire in 60 seconds.
+        </div>
+    </div>
+
+    <div class="feedback" id="feedback">Click the alert to refresh the countdown message.</div>
+
+    <script>
+        // Internal JS for simple interaction
+        const alertBox = document.getElementById('alertBox');
+        const feedback = document.getElementById('feedback');
+
+        alertBox.addEventListener('click', () => {
+            alertBox.textContent = "Your session will expire in 60 seconds.";
+            feedback.textContent = "Alertdialog clicked! Screen readers will announce the message immediately.";
+        });
+    </script>
+</body>
+
+</html>

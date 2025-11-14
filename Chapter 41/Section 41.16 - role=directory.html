@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.16 - Role Directory</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="directory"] {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-width: 400px;
+            background-color: #dfe6e9;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+        }
+
+        [role="directory"] li {
+            padding: 12px 20px;
+            border-bottom: 1px solid #2980b9;
+        }
+
+        [role="directory"] li:last-child {
+            border-bottom: none;
+        }
+
+        [role="directory"] a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        [role="directory"] a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Directory Example</h1>
+    <p>Click on a chapter to see a message:</p>
+
+    <ul role="directory" id="directory">
+        <li><a href="#" data-chapter="Chapter 1">Chapter 1</a></li>
+        <li><a href="#" data-chapter="Chapter 2">Chapter 2</a></li>
+        <li><a href="#" data-chapter="Chapter 3">Chapter 3</a></li>
+    </ul>
+
+    <script>
+        const directoryLinks = document.querySelectorAll('#directory a');
+
+        directoryLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // prevent actual navigation
+                alert(`You clicked on ${this.dataset.chapter}`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

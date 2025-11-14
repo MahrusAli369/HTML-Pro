@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.9 - Role Checkbox</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .interactive-output {
+            margin-top: 15px;
+            font-style: italic;
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Checkbox Example</h1>
+    <p>A checkbox with <code>role="checkbox"</code> and <code>aria-checked</code> that can be toggled interactively.</p>
+
+    <label>
+        <input type="checkbox" role="checkbox" aria-checked="false" id="agreeCheckbox">
+        I agree to the terms and conditions
+    </label>
+
+    <div class="interactive-output" id="output">Checkbox is currently unchecked.</div>
+
+    <script>
+        const checkbox = document.getElementById('agreeCheckbox');
+        const output = document.getElementById('output');
+
+        checkbox.addEventListener('change', () => {
+            const state = checkbox.checked ? 'checked' : 'unchecked';
+            checkbox.setAttribute('aria-checked', checkbox.checked);
+            output.textContent = `Checkbox is currently ${state}.`;
+        });
+    </script>
+</body>
+
+</html>

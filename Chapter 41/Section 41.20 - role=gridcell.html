@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.20 - Role Gridcell</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table,
+        [role="grid"] {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+            background-color: #dfe6e9;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+        }
+
+        th,
+        td {
+            border: 1px solid #2980b9;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #b2bec3;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 6px 12px;
+            margin-top: 10px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c5980;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Gridcell Example</h1>
+
+    <!-- Grid with role="gridcell" -->
+    <table role="grid" id="gridcellTable">
+        <thead>
+            <tr>
+                <th role="columnheader">Value 1</th>
+                <th role="columnheader">Value 2</th>
+                <th role="columnheader">Value 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr role="row">
+                <td role="gridcell">17</td>
+                <td role="gridcell">64</td>
+                <td role="gridcell">18</td>
+            </tr>
+            <tr role="row">
+                <td role="gridcell">23</td>
+                <td role="gridcell">47</td>
+                <td role="gridcell">91</td>
+            </tr>
+            <tr role="row">
+                <td role="gridcell">55</td>
+                <td role="gridcell">12</td>
+                <td role="gridcell">33</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="highlightBtn">Highlight Highest Gridcell</button>
+
+    <script>
+        // Interactive: highlight the gridcell with the highest value
+        document.getElementById('highlightBtn').addEventListener('click', function () {
+            const cells = document.querySelectorAll('#gridcellTable td[role="gridcell"]');
+            let maxValue = -Infinity;
+            let maxCell;
+
+            cells.forEach(cell => {
+                cell.style.backgroundColor = ''; // reset
+                const value = parseInt(cell.textContent);
+                if (value > maxValue) {
+                    maxValue = value;
+                    maxCell = cell;
+                }
+            });
+
+            if (maxCell) maxCell.style.backgroundColor = '#ffeaa7';
+        });
+    </script>
+
+</body>
+
+</html>

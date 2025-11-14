@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.53 - Role Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .status-container {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 18px;
+            color: #27ae60;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Status</h1>
+
+    <p>This status element provides advisory information to the user. Click the button to simulate status changes.</p>
+
+    <div class="status-container" role="status" id="statusBox">Online</div>
+    <button id="toggleStatus">Toggle Status</button>
+
+    <script>
+        const statusBox = document.getElementById('statusBox');
+        const toggleBtn = document.getElementById('toggleStatus');
+
+        toggleBtn.addEventListener('click', () => {
+            if (statusBox.textContent === 'Online') {
+                statusBox.textContent = 'Away';
+                statusBox.style.color = '#f39c12';
+            } else if (statusBox.textContent === 'Away') {
+                statusBox.textContent = 'Do Not Disturb';
+                statusBox.style.color = '#c0392b';
+            } else {
+                statusBox.textContent = 'Online';
+                statusBox.style.color = '#27ae60';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

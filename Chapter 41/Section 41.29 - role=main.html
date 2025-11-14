@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.29 - Role Main</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        div[role="main"] {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li.new-item {
+            background-color: #27ae60;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            animation: highlight 1s ease;
+        }
+
+        @keyframes highlight {
+            0% {
+                background-color: #2ecc71;
+            }
+
+            100% {
+                background-color: #ecf0f1;
+                color: #2c3e50;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Main</h1>
+
+    <p>This section demonstrates a main content area. You can dynamically add new paragraphs to this area using the
+        button below:</p>
+
+    <div role="main" id="mainContent">
+        <p>Welcome to the main content area. Here you can place your primary document content.</p>
+    </div>
+
+    <button id="addParagraph">Add Paragraph</button>
+
+    <script>
+        const mainContent = document.getElementById('mainContent');
+        const button = document.getElementById('addParagraph');
+
+        const messages = [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "Praesent vitae eros eget tellus tristique bibendum.",
+            "Donec rutrum sed sem quis venenatis.",
+            "Proin viverra risus a eros volutpat tempor.",
+            "In quis arcu et eros porta lobortis sit amet at libero."
+        ];
+
+        button.addEventListener('click', () => {
+            const para = document.createElement('p');
+            const text = messages[Math.floor(Math.random() * messages.length)];
+            para.textContent = text;
+            para.classList.add('new-item');
+            mainContent.appendChild(para);
+            // Smooth scroll to the new paragraph
+            para.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        });
+    </script>
+
+</body>
+
+</html>

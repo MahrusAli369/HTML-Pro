@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.26 - Role Listbox</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="listbox"] {
+            list-style-type: none;
+            padding-left: 0;
+            max-width: 300px;
+        }
+
+        ul[role="listbox"] li {
+            background-color: #ecf0f1;
+            margin: 5px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        ul[role="listbox"] li:hover {
+            background-color: #e67e22;
+            color: white;
+            transform: scale(1.03);
+        }
+
+        ul[role="listbox"] li.selected {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        #selectedItems {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Listbox</h1>
+
+    <p>Click items to select them. Multiple selections allowed:</p>
+
+    <ul role="listbox" id="listbox">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <div id="selectedItems">Selected: none</div>
+
+    <script>
+        const listbox = document.getElementById('listbox');
+        const items = listbox.querySelectorAll('li');
+        const display = document.getElementById('selectedItems');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('selected');
+                updateSelected();
+            });
+        });
+
+        function updateSelected() {
+            const selected = [...items].filter(i => i.classList.contains('selected')).map(i => i.textContent);
+            display.textContent = selected.length ? `Selected: ${selected.join(', ')}` : 'Selected: none';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.59 - Role Textbox</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        textarea[role="textbox"] {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #bdc3c7;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .counter {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        .interactive-box {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Textbox</h1>
+    <p>Type your thoughts below. The character counter will update in real-time:</p>
+
+    <div class="interactive-box">
+        <textarea role="textbox" id="textbox" placeholder="Enter text here..."></textarea>
+        <div class="counter" id="counter">0 characters</div>
+    </div>
+
+    <div class="interactive-box">
+        <textarea role="textbox" id="textbox2" placeholder="Another free-form input..."></textarea>
+        <div class="counter" id="counter2">0 characters</div>
+    </div>
+
+    <script>
+        function attachCounter(textareaId, counterId) {
+            const textarea = document.getElementById(textareaId);
+            const counter = document.getElementById(counterId);
+            textarea.addEventListener('input', () => {
+                counter.textContent = `${textarea.value.length} characters`;
+            });
+        }
+
+        // Attach counters to both textboxes
+        attachCounter('textbox', 'counter');
+        attachCounter('textbox2', 'counter2');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.30 - Role Marquee</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="marquee"] {
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            overflow: hidden;
+            height: 50px;
+            position: relative;
+            list-style: none;
+        }
+
+        ul[role="marquee"] li {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            color: #2980b9;
+            top: 50px;
+            /* start below the container */
+            animation: slideUp 6s linear infinite;
+        }
+
+        @keyframes slideUp {
+            0% {
+                top: 50px;
+            }
+
+            25% {
+                top: 10px;
+            }
+
+            50% {
+                top: -30px;
+            }
+
+            75% {
+                top: -70px;
+            }
+
+            100% {
+                top: 50px;
+            }
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Marquee</h1>
+
+    <p>This section shows a marquee-style live region. You can add new stock updates dynamically:</p>
+
+    <ul role="marquee" id="marqueeList">
+        <li>Dow +0.26%</li>
+        <li>Nasdaq +0.54%</li>
+        <li>S&amp;P +0.44%</li>
+    </ul>
+
+    <button id="addUpdate">Add Stock Update</button>
+
+    <script>
+        const marqueeList = document.getElementById('marqueeList');
+        const button = document.getElementById('addUpdate');
+
+        const updates = [
+            "FTSE +0.32%",
+            "DAX +0.28%",
+            "Nikkei +0.15%",
+            "Hang Seng +0.40%",
+            "S&P 500 +0.50%"
+        ];
+
+        button.addEventListener('click', () => {
+            const li = document.createElement('li');
+            li.textContent = updates[Math.floor(Math.random() * updates.length)];
+            marqueeList.appendChild(li);
+            // Reassign animation to refresh positions
+            li.style.animation = 'slideUp 6s linear infinite';
+        });
+    </script>
+
+</body>
+
+</html>

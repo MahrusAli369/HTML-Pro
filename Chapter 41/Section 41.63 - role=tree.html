@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.63 - Role Tree</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="tree"],
+        ul[role="tree"] ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li[role="treeitem"] {
+            cursor: pointer;
+            position: relative;
+            margin: 4px 0;
+        }
+
+        li[role="treeitem"]::before {
+            content: "▶";
+            position: absolute;
+            left: -15px;
+            transition: transform 0.2s;
+        }
+
+        li[role="treeitem"].expanded::before {
+            transform: rotate(90deg);
+        }
+
+        ul[role="tree"] ul {
+            display: none;
+            margin-left: 15px;
+            border-left: 1px dashed #ccc;
+            padding-left: 10px;
+        }
+
+        li[role="treeitem"].expanded>ul {
+            display: block;
+        }
+
+        li[role="treeitem"] span {
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Tree</h1>
+    <p>Click on parts to expand or collapse chapters:</p>
+
+    <ul role="tree">
+        <li role="treeitem"><span>Part 1</span>
+            <ul>
+                <li role="treeitem"><span>Chapter 1</span></li>
+                <li role="treeitem"><span>Chapter 2</span></li>
+                <li role="treeitem"><span>Chapter 3</span></li>
+            </ul>
+        </li>
+        <li role="treeitem"><span>Part 2</span>
+            <ul>
+                <li role="treeitem"><span>Chapter 4</span></li>
+                <li role="treeitem"><span>Chapter 5</span></li>
+                <li role="treeitem"><span>Chapter 6</span></li>
+            </ul>
+        </li>
+        <li role="treeitem"><span>Part 3</span>
+            <ul>
+                <li role="treeitem"><span>Chapter 7</span></li>
+                <li role="treeitem"><span>Chapter 8</span></li>
+                <li role="treeitem"><span>Chapter 9</span></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // Simple expand/collapse for tree
+        const treeItems = document.querySelectorAll('li[role="treeitem"] > span');
+        treeItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('expanded');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

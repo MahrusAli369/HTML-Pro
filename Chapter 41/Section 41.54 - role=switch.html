@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.54 - Role Switch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid #bdc3c7;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .switch-status {
+            font-weight: bold;
+            font-size: 18px;
+            color: #27ae60;
+        }
+
+        .switch-status.off {
+            color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Switch</h1>
+
+    <p>This switch element allows toggling between on/off states. Use the dropdown to change its status.</p>
+
+    <div class="switch-container">
+        <select role="switch" aria-checked="false" id="switchControl">
+            <option value="on">On</option>
+            <option value="off" selected>Off</option>
+        </select>
+        <span class="switch-status off" id="switchStatus">Off</span>
+    </div>
+
+    <script>
+        const switchControl = document.getElementById('switchControl');
+        const switchStatus = document.getElementById('switchStatus');
+
+        switchControl.addEventListener('change', () => {
+            const isOn = switchControl.value === 'on';
+            switchStatus.textContent = isOn ? 'On' : 'Off';
+            switchStatus.className = isOn ? 'switch-status' : 'switch-status off';
+            switchControl.setAttribute('aria-checked', isOn);
+        });
+    </script>
+
+</body>
+
+</html>

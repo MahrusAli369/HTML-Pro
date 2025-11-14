@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.60 - Role Timer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .timer-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #bdc3c7;
+            display: inline-block;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            background-color: #e67e22;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Timer</h1>
+    <p>Interactive countdown timer. Start, pause, or reset as needed:</p>
+
+    <div class="timer-box">
+        <span role="timer" id="timer">60</span> seconds remaining
+    </div>
+    <br>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        let time = 60;
+        let timerId = null;
+        const timerDisplay = document.getElementById('timer');
+
+        function updateDisplay() {
+            timerDisplay.textContent = time;
+        }
+
+        document.getElementById('startBtn').addEventListener('click', () => {
+            if (!timerId) {
+                timerId = setInterval(() => {
+                    if (time > 0) {
+                        time--;
+                        updateDisplay();
+                    } else {
+                        clearInterval(timerId);
+                        timerId = null;
+                        alert("Time's up!");
+                    }
+                }, 1000);
+            }
+        });
+
+        document.getElementById('pauseBtn').addEventListener('click', () => {
+            clearInterval(timerId);
+            timerId = null;
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            clearInterval(timerId);
+            timerId = null;
+            time = 60;
+            updateDisplay();
+        });
+    </script>
+
+</body>
+
+</html>

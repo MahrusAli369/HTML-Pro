@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.45 - Role Rowgroup</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #2980b9;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tbody[role="rowgroup"] tr:hover {
+            background-color: #d6eaf8;
+            cursor: pointer;
+        }
+
+        #selectedGroup {
+            font-size: 1.1rem;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Rowgroup</h1>
+
+    <table>
+        <thead role="rowgroup">
+            <tr role="row">
+                <th>Project</th>
+                <th>Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody role="rowgroup">
+            <tr role="row">
+                <td>Website Redesign</td>
+                <td>Oct 15</td>
+                <td>In Progress</td>
+            </tr>
+            <tr role="row">
+                <td>Mobile App</td>
+                <td>Nov 1</td>
+                <td>Pending</td>
+            </tr>
+            <tr role="row">
+                <td>Marketing Campaign</td>
+                <td>Sep 30</td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="selectedGroup">Selected Row: None</div>
+
+    <script>
+        const rowgroupRows = document.querySelectorAll('tbody[role="rowgroup"] tr');
+        const display = document.getElementById('selectedGroup');
+
+        rowgroupRows.forEach((row, index) => {
+            row.addEventListener('click', () => {
+                display.textContent = `Selected Row: ${index + 1} (${row.cells[0].textContent} - ${row.cells[1].textContent})`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

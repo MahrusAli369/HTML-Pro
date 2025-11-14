@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.56 - Role Table</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table[role="table"] {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ecf0f1;
+            cursor: pointer;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        th.sorted {
+            background-color: #e67e22;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Table</h1>
+
+    <p>Click the "Age" header to sort the table by age.</p>
+
+    <table role="table" id="peopleTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th id="ageHeader">Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Albert</td>
+                <td>42</td>
+                <td>Zurich</td>
+            </tr>
+            <tr>
+                <td>Marie</td>
+                <td>35</td>
+                <td>Paris</td>
+            </tr>
+            <tr>
+                <td>Isaac</td>
+                <td>76</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Nikola</td>
+                <td>60</td>
+                <td>Belgrade</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.getElementById('peopleTable');
+        const ageHeader = document.getElementById('ageHeader');
+
+        ageHeader.addEventListener('click', () => {
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const sortedRows = rows.sort((a, b) => {
+                return parseInt(a.cells[1].textContent) - parseInt(b.cells[1].textContent);
+            });
+            tbody.innerHTML = '';
+            sortedRows.forEach(row => tbody.appendChild(row));
+            // Highlight sorted column
+            document.querySelectorAll('th').forEach(th => th.classList.remove('sorted'));
+            ageHeader.classList.add('sorted');
+        });
+    </script>
+
+</body>
+
+</html>

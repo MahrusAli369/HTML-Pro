@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.37 - Role Navigation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        ul[role="navigation"] {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            padding: 10px 20px;
+            width: max-content;
+        }
+
+        ul[role="navigation"] li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        ul[role="navigation"] li a:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dfe6e9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Navigation</h1>
+
+    <p>Click on a link to see its current selection:</p>
+
+    <ul role="navigation" id="nav">
+        <li><a href="#" data-page="Home">Home</a></li>
+        <li><a href="#" data-page="About">About</a></li>
+        <li><a href="#" data-page="Contact">Contact</a></li>
+    </ul>
+
+    <div class="output" id="output">Current page: Home</div>
+
+    <script>
+        const links = document.querySelectorAll('ul[role="navigation"] a');
+        const output = document.getElementById('output');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // prevent actual navigation for demo
+                output.textContent = `Current page: ${link.dataset.page}`;
+                links.forEach(l => l.style.backgroundColor = '');
+                link.style.backgroundColor = '#e67e22';
+                link.style.color = 'white';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

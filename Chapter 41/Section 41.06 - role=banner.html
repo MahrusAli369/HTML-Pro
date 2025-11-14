@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.6 - Role Banner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="banner"] {
+            border: 2px solid #27ae60;
+            background-color: #e8f6f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #27ae60;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #1e8449;
+        }
+
+        .interactive {
+            margin-top: 10px;
+            font-style: italic;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Banner Example</h1>
+
+    <p>The <code>role="banner"</code> identifies site-oriented content such as logos, main navigation, and branding.</p>
+
+    <div role="banner">
+        <h2>My Site</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button id="toggleNav">Toggle Navigation</button>
+        <div class="interactive" id="navStatus">Navigation is visible</div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleNav');
+        const navStatus = document.getElementById('navStatus');
+        const bannerNav = document.querySelector('[role="banner"] ul');
+
+        toggleBtn.addEventListener('click', () => {
+            if (bannerNav.style.display === 'none') {
+                bannerNav.style.display = 'inline-block';
+                navStatus.textContent = 'Navigation is visible';
+            } else {
+                bannerNav.style.display = 'none';
+                navStatus.textContent = 'Navigation is hidden';
+            }
+        });
+    </script>
+</body>
+
+</html>

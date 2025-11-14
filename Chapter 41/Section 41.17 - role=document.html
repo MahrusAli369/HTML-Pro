@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.17 - Role Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="document"] {
+            background-color: #dfe6e9;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 700px;
+        }
+
+        [role="document"] p {
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 12px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c5980;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Document Example</h1>
+
+    <div role="document" id="documentContent">
+        <h1>The Life of Albert Einstein</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod sapien vel libero dictum, in
+            vehicula sapien pharetra.</p>
+        <p>Einstein was a theoretical physicist who developed the theory of relativity, one of the two pillars of modern
+            physics.</p>
+        <button id="showParagraphs">Count Paragraphs</button>
+    </div>
+
+    <script>
+        // Interactive feature: count paragraphs inside document
+        document.getElementById('showParagraphs').addEventListener('click', function () {
+            const paragraphs = document.querySelectorAll('#documentContent p');
+            alert(`This document contains ${paragraphs.length} paragraphs.`);
+        });
+    </script>
+
+</body>
+
+</html>

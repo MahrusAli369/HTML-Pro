@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.7 - Role Button</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        button[role="button"] {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2980b9;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button[role="button"]:hover {
+            background-color: #1c5980;
+        }
+
+        .interactive-output {
+            margin-top: 15px;
+            font-style: italic;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Button Example</h1>
+
+    <p>The <code>role="button"</code> attribute indicates that an element is a button and triggers an action when
+        clicked.</p>
+
+    <button role="button" id="addButton">Add Item</button>
+    <div class="interactive-output" id="output">Items added: 0</div>
+
+    <script>
+        const button = document.getElementById('addButton');
+        const output = document.getElementById('output');
+        let count = 0;
+
+        button.addEventListener('click', () => {
+            count++;
+            output.textContent = `Items added: ${count}`;
+        });
+    </script>
+</body>
+
+</html>

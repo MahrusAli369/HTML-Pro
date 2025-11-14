@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.40 - Role Progressbar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        progress[role="progressbar"] {
+            width: 100%;
+            height: 25px;
+            border-radius: 5px;
+            overflow: hidden;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #dfe6e9;
+            margin-bottom: 10px;
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #dfe6e9;
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #e67e22;
+            transition: width 0.3s ease;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: #e67e22;
+            transition: width 0.3s ease;
+        }
+
+        .output {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Progressbar</h1>
+
+    <p>Click "Start Progress" to see the task progress in action:</p>
+
+    <progress role="progressbar" value="0" max="100" id="progressBar">0%</progress>
+    <div class="output" id="output">0% completed</div>
+
+    <button id="startBtn">Start Progress</button>
+
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const output = document.getElementById('output');
+        const button = document.getElementById('startBtn');
+
+        button.addEventListener('click', () => {
+            let value = 0;
+            progressBar.value = 0;
+            output.textContent = '0% completed';
+            const interval = setInterval(() => {
+                if (value >= 100) {
+                    clearInterval(interval);
+                    output.textContent = 'Task Completed!';
+                } else {
+                    value += 5;
+                    progressBar.value = value;
+                    output.textContent = `${value}% completed`;
+                }
+            }, 300);
+        });
+    </script>
+
+</body>
+
+</html>

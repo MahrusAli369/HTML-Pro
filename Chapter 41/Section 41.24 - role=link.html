@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.24 - Role Link</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        a[role="link"] {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        a[role="link"]:hover {
+            color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        #messageBox {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #27ae60;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Link</h1>
+
+    <p>
+        Check out these resources:
+        <a href="https://www.w3.org/TR/html5/dom.html#aria-usage-note" role="link" target="_blank">W3C ARIA Usage</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Link_Role" role="link"
+            target="_blank">MDN ARIA Link</a>
+    </p>
+
+    <div id="messageBox">You clicked a link! It will open in a new tab.</div>
+
+    <script>
+        const links = document.querySelectorAll('a[role="link"]');
+        const messageBox = document.getElementById('messageBox');
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                messageBox.style.display = 'block';
+                setTimeout(() => {
+                    messageBox.style.display = 'none';
+                }, 2000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

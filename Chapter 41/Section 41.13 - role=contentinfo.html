@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.13 - Role Contentinfo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p[role="contentinfo"] {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #2980b9;
+            max-width: 400px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Contentinfo Example</h1>
+    <p>Role <code>contentinfo</code> marks a section that provides information about the parent document. You can reveal
+        more details interactively below.</p>
+
+    <p role="contentinfo" id="contentinfo">
+        Author: Albert Einstein<br>
+        Published: August 15, 1940
+    </p>
+    <button id="toggle">Show/Hide Extra Info</button>
+    <p id="extra" style="display:none; margin-top:10px;">
+        Source: <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank">Wikipedia - Albert
+            Einstein</a><br>
+        Notes: Famous physicist known for the theory of relativity.
+    </p>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle');
+        const extraInfo = document.getElementById('extra');
+
+        toggleBtn.addEventListener('click', () => {
+            if (extraInfo.style.display === 'none') {
+                extraInfo.style.display = 'block';
+            } else {
+                extraInfo.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

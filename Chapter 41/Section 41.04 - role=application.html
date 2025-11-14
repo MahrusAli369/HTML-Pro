@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.4 - Role Application</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .application {
+            border: 2px solid #3498db;
+            background-color: #eaf4fc;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        input {
+            width: 60px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+            text-align: center;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-style: italic;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Role Application Example</h1>
+
+    <p>The <code>role="application"</code> indicates that the content acts as a web application rather than a static
+        document. Here's a simple interactive calculator:</p>
+
+    <div class="application" role="application">
+        <h2>Calculator</h2>
+        <input id="num1" type="text" placeholder="0"> +
+        <input id="num2" type="text" placeholder="0"> =
+        <span id="result">0</span>
+        <br>
+        <button id="calculateBtn">Calculate</button>
+    </div>
+
+    <div class="feedback" id="feedback">Enter numbers and click calculate to see the result.</div>
+
+    <script>
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const result = document.getElementById('result');
+        const feedback = document.getElementById('feedback');
+        const btn = document.getElementById('calculateBtn');
+
+        btn.addEventListener('click', () => {
+            const val1 = parseFloat(num1.value) || 0;
+            const val2 = parseFloat(num2.value) || 0;
+            result.textContent = val1 + val2;
+            feedback.textContent = `Calculation complete: ${val1} + ${val2} = ${val1 + val2}`;
+        });
+    </script>
+</body>
+
+</html>

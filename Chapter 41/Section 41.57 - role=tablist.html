@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.57 - Role Tablist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="tablist"] {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #bdc3c7;
+        }
+
+        [role="tab"] {
+            padding: 10px 20px;
+            margin-right: 5px;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            border-radius: 5px 5px 0 0;
+            transition: background-color 0.2s;
+        }
+
+        [role="tab"].active {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        .tabpanel {
+            display: none;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #bdc3c7;
+            border-top: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabpanel.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Tablist</h1>
+
+    <p>Click on the tabs to switch between sections.</p>
+
+    <ul role="tablist" id="tabs">
+        <li role="tab" class="active" data-tab="intro">Introduction</li>
+        <li role="tab" data-tab="chapter1">Chapter 1</li>
+        <li role="tab" data-tab="chapter2">Chapter 2</li>
+    </ul>
+
+    <div id="intro" class="tabpanel active">
+        <h2>Introduction</h2>
+        <p>Welcome! This is the introduction section with general info.</p>
+    </div>
+
+    <div id="chapter1" class="tabpanel">
+        <h2>Chapter 1</h2>
+        <p>This section contains the first chapter content with interactive tips.</p>
+    </div>
+
+    <div id="chapter2" class="tabpanel">
+        <h2>Chapter 2</h2>
+        <p>This section contains the second chapter content and extra details.</p>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('[role="tab"]');
+        const panels = document.querySelectorAll('.tabpanel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                // Add active to clicked tab and related panel
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

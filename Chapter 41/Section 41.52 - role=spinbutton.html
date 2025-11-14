@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.52 - Role Spinbutton</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .spin-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        input[type=number] {
+            width: 80px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 6px 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Spinbutton</h1>
+
+    <p>Use the buttons or type a value to adjust the spinbutton between 0 and 100.</p>
+
+    <div class="spin-container" role="spinbutton" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
+        <button id="decrease">-</button>
+        <input type="number" id="spinValue" value="25" min="0" max="100">
+        <button id="increase">+</button>
+    </div>
+
+    <script>
+        const spinInput = document.getElementById('spinValue');
+        const decreaseBtn = document.getElementById('decrease');
+        const increaseBtn = document.getElementById('increase');
+
+        function updateAria() {
+            const val = parseInt(spinInput.value);
+            spinInput.setAttribute('aria-valuenow', val);
+        }
+
+        decreaseBtn.addEventListener('click', () => {
+            let val = parseInt(spinInput.value);
+            if (val > 0) val--;
+            spinInput.value = val;
+            updateAria();
+        });
+
+        increaseBtn.addEventListener('click', () => {
+            let val = parseInt(spinInput.value);
+            if (val < 100) val++;
+            spinInput.value = val;
+            updateAria();
+        });
+
+        spinInput.addEventListener('input', () => {
+            let val = parseInt(spinInput.value);
+            if (isNaN(val)) val = 0;
+            if (val < 0) val = 0;
+            if (val > 100) val = 100;
+            spinInput.value = val;
+            updateAria();
+        });
+    </script>
+
+</body>
+
+</html>

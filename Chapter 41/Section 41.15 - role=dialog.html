@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 41.15 - Role Dialog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #e67e22;
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        [role="dialog"] {
+            border: 2px solid #2980b9;
+            background-color: #dfe6e9;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            display: none;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            background-color: #2980b9;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Role Dialog Example</h1>
+    <p>Click the button to open the dialog:</p>
+    <button id="openDialog">Open Dialog</button>
+
+    <div role="dialog" id="myDialog" aria-modal="true" aria-labelledby="dialogTitle">
+        <p id="dialogTitle">Are you sure?</p>
+        <button id="yesBtn" role="button">Yes</button>
+        <button id="noBtn" role="button">No</button>
+    </div>
+
+    <script>
+        const dialog = document.getElementById('myDialog');
+        const openBtn = document.getElementById('openDialog');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        // Open the dialog
+        openBtn.addEventListener('click', () => {
+            dialog.style.display = 'block';
+        });
+
+        // Close dialog on "Yes" or "No"
+        yesBtn.addEventListener('click', () => {
+            alert('You clicked Yes!');
+            dialog.style.display = 'none';
+        });
+
+        noBtn.addEventListener('click', () => {
+            alert('You clicked No!');
+            dialog.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
